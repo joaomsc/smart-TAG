@@ -13,3 +13,4 @@ buildNumber.properties
 
 # IDE
 *.iml
+.idea/
