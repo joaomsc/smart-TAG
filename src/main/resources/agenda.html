@@ -1,0 +1,2712 @@
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta http-equiv="Expires" content="-1">
+    <meta http-equiv="Pragma" content="no-cache">
+    <meta http-equiv="Cache-Control" content="no-cache">
+    <title>
+        Único - Gerenciador
+    </title>
+    <link rel="stylesheet" href="/unico/recursos/estilos/padrao.css" type="text/css" media="screen, print">
+    <link rel="stylesheet" href="/unico/css/leiaute-formulario-normal.css" type="text/css" media="screen, print">
+    <link rel="stylesheet" href="/unico/css/leiaute-formulario-grid.css" type="text/css" media="screen, print">
+
+    <script language="javascript">
+        c_imagesPath = "/unico/recursos/imagens";
+    </script>
+
+    <link rel="stylesheet" type="text/css" href="/unico/ext/resources/css/ext-all-minified.css">
+    <link rel="stylesheet" type="text/css" href="/unico/css/atena-all-min.css">
+    <link rel="stylesheet" type="text/css" href="/unico/recursos/bootstrap/css/font-awesome.min.css">
+
+    <style>
+
+        .btn {
+            display: inline-block;
+            *display: inline;
+            padding: 4px 12px;
+            margin-bottom: 0;
+            *margin-left: .3em;
+            font-size: 14px;
+            line-height: 20px;
+            color: #333333;
+            text-align: center;
+            text-shadow: 0 1px 1px rgba(255, 255, 255, 0.75);
+            vertical-align: middle;
+            cursor: pointer;
+            background-color: #f5f5f5;
+            *background-color: #e6e6e6;
+            background-image: -moz-linear-gradient(top, #ffffff, #e6e6e6);
+            background-image: -webkit-gradient(linear, 0 0, 0 100%, from(#ffffff), to(#e6e6e6));
+            background-image: -webkit-linear-gradient(top, #ffffff, #e6e6e6);
+            background-image: -o-linear-gradient(top, #ffffff, #e6e6e6);
+            background-image: linear-gradient(to bottom, #ffffff, #e6e6e6);
+            background-repeat: repeat-x;
+            border: 1px solid #cccccc;
+            *border: 0;
+            border-color: #e6e6e6 #e6e6e6 #bfbfbf;
+            border-color: rgba(0, 0, 0, 0.1) rgba(0, 0, 0, 0.1) rgba(0, 0, 0, 0.25);
+            border-bottom-color: #b3b3b3;
+            -webkit-border-radius: 4px;
+            -moz-border-radius: 4px;
+            border-radius: 4px;
+            filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#ffffffff', endColorstr='#ffe6e6e6', GradientType=0);
+            filter: progid:DXImageTransform.Microsoft.gradient(enabled=false);
+            *zoom: 1;
+            -webkit-box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.2), 0 1px 2px rgba(0, 0, 0, 0.05);
+            -moz-box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.2), 0 1px 2px rgba(0, 0, 0, 0.05);
+            box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.2), 0 1px 2px rgba(0, 0, 0, 0.05);
+        }
+
+        .btn:hover,
+        .btn:focus,
+        .btn:active,
+        .btn.active,
+        .btn.disabled,
+        .btn[disabled] {
+            color: #333333;
+            background-color: #e6e6e6;
+            *background-color: #d9d9d9;
+        }
+
+        .btn:hover,
+        .btn:focus {
+            color: #333333;
+            text-decoration: none;
+            background-position: 0 -15px;
+            -webkit-transition: background-position 0.1s linear;
+            -moz-transition: background-position 0.1s linear;
+            -o-transition: background-position 0.1s linear;
+            transition: background-position 0.1s linear;
+        }
+
+        .btn:focus {
+            outline: thin dotted #333;
+            outline: 5px auto -webkit-focus-ring-color;
+            outline-offset: -2px;
+        }
+
+
+        .btn-info {
+            color: #ffffff;
+            text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.25);
+            background-color: #49afcd;
+            *background-color: #2f96b4;
+            background-image: -moz-linear-gradient(top, #5bc0de, #2f96b4);
+            background-image: -webkit-gradient(linear, 0 0, 0 100%, from(#5bc0de), to(#2f96b4));
+            background-image: -webkit-linear-gradient(top, #5bc0de, #2f96b4);
+            background-image: -o-linear-gradient(top, #5bc0de, #2f96b4);
+            background-image: linear-gradient(to bottom, #5bc0de, #2f96b4);
+            background-repeat: repeat-x;
+            border-color: #2f96b4 #2f96b4 #1f6377;
+            border-color: rgba(0, 0, 0, 0.1) rgba(0, 0, 0, 0.1) rgba(0, 0, 0, 0.25);
+            filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#ff5bc0de', endColorstr='#ff2f96b4', GradientType=0);
+            filter: progid:DXImageTransform.Microsoft.gradient(enabled=false);
+        }
+
+        .btn-info:hover,
+        .btn-info:focus,
+        .btn-info:active,
+        .btn-info.active,
+        .btn-info.disabled,
+        .btn-info[disabled] {
+            color: #ffffff;
+            background-color: #2f96b4;
+            *background-color: #2a85a0;
+        }
+
+        .btn-fisico {
+            color: #000;
+            text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.25);
+            background-color: #e6d197;
+            *background-color: #e6d197;
+            background-image: -moz-linear-gradient(top, #f3c065, #e6d197);
+            background-image: -webkit-gradient(linear, 0 0, 0 100%, from(#f3c065), to(#e6d197));
+            background-image: -webkit-linear-gradient(top, #f3c065, #e6d197);
+            background-image: -o-linear-gradient(top, #f3c065, #e6d197);
+            background-image: linear-gradient(to bottom, #f3c065, #e6d197);
+            background-repeat: repeat-x;
+            border-color: #e6d197;
+            border-color: rgba(0, 0, 0, 0.1) rgba(0, 0, 0, 0.1) rgba(0, 0, 0, 0.25);
+        }
+
+        .btn-fisico:hover,
+        .btn-fisico:focus,
+        .btn-fisico:active,
+        .btn-fisico.active,
+        .btn-fisico.disabled,
+        .btn-fisico[disabled] {
+            color: #000;
+            background-color: #e6d197;
+            *background-color: #e6d197;
+        }
+
+        .btn-eletronico {
+            color: #000;
+            text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.25);
+            background-color: #8fc78e;
+            background-image: -moz-linear-gradient(top, #ccefba, #8fc78e);
+            background-image: -webkit-gradient(linear, 0 0, 0 100%, from(#ccefba), to(#8fc78e));
+            background-image: -webkit-linear-gradient(top, #ccefba, #8fc78e);
+            background-image: -o-linear-gradient(top, #ccefba, #8fc78e);
+            background-image: linear-gradient(to bottom, #ccefba, #8fc78e);
+            background-repeat: repeat-x;
+            border-color: #ccc;
+            border-color: rgba(0, 0, 0, 0.1) rgba(0, 0, 0, 0.1) rgba(0, 0, 0, 0.25);
+        }
+
+        .btn-eletronico:hover,
+        .btn-eletronico:focus,
+        .btn-eletronico:active,
+        .btn-eletronico.active,
+        .btn-eletronico.disabled,
+        .btn-eletronico[disabled] {
+            color: #000;
+            background-color: #8fc78e;
+            *background-color: #8fc78e;
+        }
+
+        .tarja {
+            padding: 8px;
+            margin-bottom: 20px;
+            border: 1px solid transparent;
+            border-radius: 4px;
+        }
+
+        .tarja-eletronico {
+            color: #3c763d;
+            background-color: #bbdeac;
+            border-color: #d6e9c6;
+            border: 1px solid;
+        }
+
+        .tarja-fisico {
+            color: #8a6d3b;
+            background-color: #e8c45e;
+            border-color: #faebcc;
+            border: 1px solid;
+        }
+
+        ::-webkit-input-placeholder {
+            font-size: 11px;
+            color: #262630;
+            font-weight: bold;
+        }
+
+        ::-moz-placeholder { /* Firefox 19+ */
+            font-size: 11px;
+            color: #262630;
+            font-weight: bold;
+        }
+
+        div.providencias {
+            padding: 11px;
+        }
+
+        .dropup {
+            position: relative;
+        }
+
+
+        #ulProvidencias.dropdown-menu {
+            position: absolute;
+            top: 100%;
+            left: 0;
+            z-index: 1000;
+            display: none;
+            float: left;
+            padding: 5px 0;
+            margin: 2px 0 0;
+            font-size: 12px;
+            text-align: left;
+            list-style: none;
+            background-color: #FFF;
+            -webkit-background-clip: padding-box;
+            background-clip: padding-box;
+            border: 1px solid #ccc;
+            border: 1px solid rgba(0, 0, 0, .15);
+            border-radius: 4px;
+            -webkit-box-shadow: 0 6px 12px rgba(0, 0, 0, .175);
+            box-shadow: 0 6px 12px rgba(0, 0, 0, .175);
+            min-width: 384px;
+            top: auto;
+            bottom: 100%;
+            margin-bottom: 2px;
+            white-space: nowrap;
+        }
+
+        #ulProvidencias.dropdown-menu-right {
+            right: 0;
+            left: auto;
+            top: auto;
+            bottom: 100%;
+            margin-bottom: 2px;
+            white-space: nowrap;
+        }
+
+        h5.categoriaProvidencia {
+            font-weight: bold;
+            text-align: center;
+            background: #2B60B0;
+            color: #FFF;
+        }
+
+        li.executaProvidencia {
+            cursor: pointer;
+            color: #000;
+        }
+
+        li.executaProvidencia:hover {
+            background-color: #DFE8F6;
+            color: #000;
+        }
+
+        li.executaProvidencia a:hover {
+            color: #000;
+        }
+
+        li.executaProvidencia a,
+        li.executaProvidencia a:visited {
+            font-weight: normal;
+            color: #000;
+        }
+
+        #ulProvidencias.dropdown-menu a {
+            width: 450px;
+            text-decoration: none;
+        }
+
+        #ulProvidencias.dropdown-menu #ulListaProvidencias.dropdown-results {
+            border: none;
+            margin: 5px 0 0 0;
+        }
+
+        #ulListaProvidencias.com-altura-travada {
+            overflow-y: scroll;
+            border: 1px solid #eee;
+            margin-bottom: 10px;
+            max-height: 300px;
+        }
+
+        #ulListaProvidencias.list-unstyled {
+            padding-left: 0;
+            list-style: none;
+        }
+
+        #linkProvidencias.dropdown {
+            position: relative;
+            cursor: pointer;
+            display: inline-block;
+            width: 384px;
+            font-size: 12px;
+            color: #2B60B0;
+            background: #FFF;
+            border-color: #145080;
+            border: 1px solid;
+            text-align: left;
+            height: 18px;
+            padding-top: 2px;
+        }
+
+        #linkProvidencias span {
+            padding-left: 5px;
+        }
+
+        #linkProvidencias i {
+            float: right !important;
+            padding-right: 2px;
+        }
+
+    </style>
+
+    <script type="text/javascript" src="/unico/scripts/atena-all-min.js?v1"></script>
+    <style type="text/css" media="screen,projection"></style>
+    <style type="text/css">
+        .submenu {
+            display: none;
+        }
+    </style>
+
+    <script charset="UTF-8" type="text/javascript" src="/unico/scripts/profiling.js"></script>
+    <script charset="UTF-8" type="text/javascript" src="/unico/scripts/botaoPopup_Extensao.js"></script>
+
+    <link rel="SHORTCUT ICON" href="/unico/skin/img/world_icon.png">
+
+</head>
+<body class="ext-webkit ext-chrome" id="ext-gen3">
+<div id="unico-classico-acessibilidade" class="acessibilidade menu-principal " role="navigation"><h2>Menu de
+    acessibilidade</h2>
+    <ul>
+        <li><a tabindex="1" class="menu-principal" accesskey="1" href="#acessibilidade-menu-principal">Ir para o menu
+            principal</a></li>
+        <li><a tabindex="2" class="menu-secundario" accesskey="2" href="#acessibilidade-menu-secundario">Ir para o menu
+            secundário</a></li>
+        <li><a tabindex="4" class="busca-etiqueta" accesskey="4" href="#acessibilidade-busca-etiqueta">Buscar
+            etiqueta</a></li>
+        <li><a tabindex="5" class="atuacao" accesskey="5" href="#acessibilidade-atuacao">Selecionar tipo de atuação</a>
+        </li>
+        <li><a tabindex="6" class="sair-do-sistema" accesskey="6" href="#acessibilidade-sair-do-sistema">Ir para o link
+            sair do sistema</a></li>
+    </ul>
+    <style>#unico-classico-acessibilidade {
+        text-indent: -9999em;
+        position: absolute
+    }
+
+    #unico-classico-acessibilidade ul, #unico-classico-acessibilidade ul li {
+        list-style: none
+    }
+
+    #unico-classico-acessibilidade .hide {
+        display: none
+    }
+
+    #unico-classico-acessibilidade.debug {
+        z-index: 99999;
+        text-indent: inherit;
+        background: #CCC;
+        border: 1px solid;
+        top: 10px;
+        left: 10px;
+        padding: 10px
+    }
+
+    #unico-classico-acessibilidade.debug ul, #unico-classico-acessibilidade.debug ul li {
+        list-style-type: disc
+    }</style>
+</div>
+<div id="WzTtDiV"
+     style="visibility: hidden; position: absolute; overflow: hidden; padding: 0px; width: 1279px; left: -1280px; top: 0px;"></div>
+<script charset="UTF-8" type="text/javascript" src="/unico/scripts/tooltip/wz_tooltip.js"></script>
+
+
+<div id="cabecalho" class="cabecalho">
+    <div id="main_menu_div">
+        <table id="main_menu_table">
+            <tbody>
+            <tr>
+                <td id="menu_1">&nbsp;
+                    <!-- logo -->
+                </td>
+
+
+                <td id="menu_2">
+                    <!-- botao blog/botao glpi -->
+                    <div id="menu_botoes_glpi_blog">
+
+                    </div>
+                </td>
+
+                <td id="menu_3">
+                    <script type="text/javascript">
+
+                        function submeter(campo, evento) {
+
+                            var tecla;
+
+                            if (windows.event) {
+                                tecla = window.event.keyCode;
+                            } else if (evento) {
+                                tecla = e.which;
+                            } else {
+                                return true;
+                            }
+
+                            if (tecla == 13) {
+                                campo.form.submit();
+                                return false;
+                            } else {
+                                return true;
+                            }
+                        }
+
+                    </script>
+
+                    <div id="pesquisaEtiqueta">
+                        <form action="/unico/extCDU/render.action">
+                            <input type="hidden" name="action" value="/etiqueta/consultaGeral/exibir.action">
+
+                            <ul id="checksPesquisaEtiqueta">
+                                <li>
+                                    <input type="radio" $generoj="" name="generoPesquisaEtiqueta"
+                                           aria-label="Processo Judicial" value="92"> <img style="margin: 0"
+                                                                                           src="/unico/img/j.png">
+                                </li>
+                                <li>
+                                    <input type="radio" checked="" name="generoPesquisaEtiqueta" aria-label="Documento"
+                                           value="41"> <img style="margin: 0" src="/unico/img/d.png">
+                                </li>
+                                <li>
+                                    <input type="radio" $generoe="" name="generoPesquisaEtiqueta" aria-label="Envelope"
+                                           value="15"> <img style="margin: 0" src="/unico/img/e.png">
+                                </li>
+                                <li>
+                                    <input type="radio" $generom="" name="generoPesquisaEtiqueta"
+                                           aria-label="Manifestação" value="11"> <img style="margin: 0"
+                                                                                      src="/unico/img/m.png">
+                                </li>
+                                <li>
+                                    <input type="radio" $generoa="" name="generoPesquisaEtiqueta"
+                                           aria-label="Procedimento Extrajudicial" value="10"> <img style="margin: 0"
+                                                                                                    src="/unico/img/a.png">
+                                </li>
+                            </ul>
+
+                            <input type="text" value="" placeholder="Buscar etiqueta..."
+                                   aria-label="Pesquisar processos pelo número da etiqueta" name="etiqueta_pesquisa"
+                                   id="etiqueta_pesquisa" onkeypress="return submeter(this, event);" size="40"
+                                   style="margin: 0 ; padding-left:20px; background:white url('/unico/img/lupa.png') no-repeat left; border: 1px #c2c2c2 outset;">
+
+                        </form>
+                    </div>
+                </td>
+
+                <td id="menu_4">
+                    <div id="menu_datahora">
+                        <span id="dataBrasilia">22/02/2019</span>
+                        <div id="menu_data" class="postdate">
+                            <script charset="UTF-8" type="text/javascript">
+                                var hora_sistema = '23:24:48';
+                                var array = hora_sistema.split(":");
+                                var horas = parseInt(array[0]); // integer
+                                var minutos = parseInt(array[1]); // integer
+                                var segundos = parseInt(array[2]); // integer
+
+                                //atualiza o input clock do header a cada 1s.
+                                //raphaelsa@pgr.mpf.gov.br
+                                function refreshClock() {
+                                    if (getElemento('clock') != null && getElemento('clock') != undefined) {
+                                        var h = '';
+                                        var m = '';
+                                        var s = '';
+                                        //
+                                        segundos++;
+                                        if (segundos == 60) {
+                                            minutos++;
+                                            segundos = 0;
+                                        }
+                                        if (minutos == 60) {
+                                            horas++;
+                                            minutos = 0;
+                                        }
+                                        //
+                                        getElemento('clock').value = '';
+                                        h = '' + horas;
+                                        if (minutos < 10) {
+                                            m = '0' + minutos;
+                                        } else {
+                                            m = '' + minutos;
+                                        }
+                                        if (segundos < 10) {
+                                            s = '0' + segundos;
+                                        } else {
+                                            s = '' + segundos;
+                                        }
+                                        getElemento('clock').value = h + ':' + m + ':' + s + ' Brasília-DF';
+                                        setTimeout("refreshClock()", 1000);
+                                    }
+                                }
+                            </script>
+                            <input type="text" id="clock" size="21"
+                                   style="border:0px; cursor:default; background:transparent; color:#ffffff; position:relative; left:8px; width:148px;"
+                                   title="Última operação realizada às 23:24:48">
+                        </div>
+                    </div>
+                </td>
+                <td id="menu_5">
+                    <!-- usuario/atuacao/versao -->
+                    <div id="menu_usuario">
+                        Olá <b>JOAO CARVALHO - Matr: 29742</b>&nbsp;&nbsp;
+                        &nbsp;&nbsp;
+                    </div>
+                    <div id="menu_atuacao_prod">
+                        <form action="/unico/escolhaAtuacao/trocar.action" method="post" style="padding: 0; margin: 0;">
+                            <select name="atuacao" onchange="if(this.value)this.form.submit();" id="atuacao">
+                                <option value="" selected="selected" title=""></option>
+                                <optgroup label="&nbsp;PRM-PASSOS">
+                                    <option value="1931" title="&nbsp;GABPRM - &nbsp;">&nbsp;GABPRM - &nbsp;</option>
+                                    <option value="1932"
+                                            title="&nbsp;GABPRM1-FCTT - FLAVIA CRISTINA TAVARES TORRES&nbsp;">&nbsp;GABPRM1-FCTT
+                                        - FLAVIA CRISTINA TAVARES TORRES&nbsp;
+                                    </option>
+                                    <option value="13632" selected="selected"
+                                            title="&nbsp;GABPRM2-FAAM - FELIPE ANTONIO ABREU MASCARELLI&nbsp;">&nbsp;GABPRM2-FAAM
+                                        - FELIPE ANTONIO ABREU MASCARELLI&nbsp;
+                                    </option>
+                                    <option value="1936"
+                                            title="&nbsp;SADM/PRM-MG -  SETOR ADMINISTRATIVO DA PRM/PASSOS&nbsp;">&nbsp;SADM/PRM-MG
+                                        - SETOR ADMINISTRATIVO DA PRM/PASSOS&nbsp;
+                                    </option>
+                                    <option value="1935"
+                                            title="&nbsp;SJUR/PRM-MG -  SETOR JURIDICO DA PRM/PASSOS&nbsp;">&nbsp;SJUR/PRM-MG
+                                        - SETOR JURIDICO DA PRM/PASSOS&nbsp;
+                                    </option>
+                                </optgroup>
+                                <optgroup label="&nbsp;">
+                                </optgroup>
+                            </select>
+                        </form>
+                    </div>
+
+                    <div id="nav_bar">
+                        <a href="https://wiki.mpf.gov.br/index.php5/%C3%9Anico:Vers%C3%B5es"
+                           style="text-decoration: none" target="_blank">
+                            <div id="version">
+                                <div class="nav_top">
+                                    v.
+                                    3.10.30.00
+                                    <script charset="UTF-8" type="text/javascript">
+                                        var ambiente = 'prod';
+                                        var texto = '';
+                                        if (ambiente == 'prod') {
+                                            texto = '&nbsp;<font color=#48b5ff>P&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font>';
+                                        } else if (ambiente == 'homologa') {
+                                            texto = '&nbsp;<font color=#ffa61b>H&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font>';
+                                        } else if (ambiente == 'desenv') {
+                                            texto = '&nbsp;<font color=#31f729>D&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font>';
+                                        }
+                                        window.document.write(texto);
+                                    </script>&nbsp;<font color="#48b5ff">P&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font>
+                                </div>
+                                <div class="nav_bottom"
+                                     onmouseover="newTipSimples('Data e Hora da disponibilização do sistema no servidor');">
+
+                                    22/2/2019 12:43:49
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+                </td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
+    <div id="menuPrincipal" class="menuPrincipal">
+
+        <ul id="Menu1" class="MM">
+            <li>
+                <a href="/unico?atena_reiniciar_historico=true">Portal Único</a></li>
+            <li>
+                <a href="/unico/gerenciador/consultar.action?atena_reiniciar_historico=true">Página Inicial</a></li>
+            <li>
+                <a class="NOLINK" href="javascript:;">Gerenciador</a>
+                <ul class="SM">
+                    <li>
+                        <a href="/unico/unico-v2/app/modules/gerenciador/Gerenciador.html#/judicial" target="_blank">Localizados
+                            No Setor</a></li>
+                    <li class="NOSEPARATOR">
+                        <a href="/unico/gerenciadorGabinete/exibirForaDoGabinete.action?atena_reiniciar_historico=true"
+                           target="_blank">Localizados Fora do Setor</a></li>
+                </ul>
+            </li>
+            <li>
+                <a class="NOLINK" href="javascript:;">Documento</a>
+                <ul class="SM">
+                    <li>
+                        <a href="/unico/unico-v2/app/modules/documentos/DocumentosView.html#/incluir/expedido">Incluir</a>
+                    </li>
+                    <li>
+                        <a href="/unico/extCDU/render.action?action=/integracao/documentoAdministrativo/exibir.action&amp;atena_reiniciar_historico=true">Consultar</a>
+                    </li>
+                    <li>
+                        <a class="NOLINK" href="javascript:;" style="padding-right: 16px;"><span class="SMS"><img
+                                src="../img/../skin/img/arrow.png" alt="+"
+                                style="display:block;border:0;width:0;height:0;"></span>Assinatura Digital</a>
+                        <ul class="SM">
+                            <li>
+                                <a href="/unico/unico-v2/app/modules/assinaturaDigital/assinatura/AssinaturaEmLoteView.html">Assinar
+                                    Expedientes</a></li>
+                            <li class="NOSEPARATOR">
+                                <a href="/unico/unico-v2/app/modules/assinaturaDigital/consultaExpedientesAssinados/ConsultaExpedientesAssinadosView.html">Consultar
+                                    Expedientes Assinados</a></li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a class="NOLINK" href="javascript:;" style="padding-right: 16px;"><span class="SMS"><img
+                                src="../img/../skin/img/arrow.png" alt="+"
+                                style="display:block;border:0;width:0;height:0;"></span>Publicação</a>
+                        <ul class="SM">
+                            <li class="NOSEPARATOR">
+                                <a href="/unico/extCDU/render.action?action=/documentoAdministrativo/publicacao/consultaPublicacao/exibir.action&amp;atena_reiniciar_historico=true">Consultar</a>
+                            </li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a class="NOLINK" href="javascript:;" style="padding-right: 16px;"><span class="SMS"><img
+                                src="../img/../skin/img/arrow.png" alt="+"
+                                style="display:block;border:0;width:0;height:0;"></span>Envelope</a>
+                        <ul class="SM">
+                            <li>
+                                <a href="/unico/enderecoEnvelope/preConsultar.action?atena_reiniciar_historico=true">Endereco</a>
+                            </li>
+                            <li>
+                                <a class="NOLINK" href="javascript:;" style="padding-right: 16px;"><span
+                                        class="SMS"><img src="../img/../skin/img/arrow.png" alt="+"
+                                                         style="display:block;border:0;width:0;height:0;"></span>Recebido</a>
+                                <ul class="SM">
+                                    <li class="NOSEPARATOR">
+                                        <a href="/unico/extCDU/render.action?action=/envelope/consultaEnvelopesRecebidos/exibir.action&amp;atena_reiniciar_historico=true">Consultar
+                                            Recebidos</a></li>
+                                </ul>
+                            </li>
+                            <li>
+                                <a class="NOLINK" href="javascript:;" style="padding-right: 16px;"><span
+                                        class="SMS"><img src="../img/../skin/img/arrow.png" alt="+"
+                                                         style="display:block;border:0;width:0;height:0;"></span>Expedido</a>
+                                <ul class="SM">
+                                    <li class="NOSEPARATOR">
+                                        <a href="/unico/extCDU/render.action?action=/envelope/consultaEnvelopesExpedidos/exibir.action&amp;atena_reiniciar_historico=true">Consultar
+                                            Expedidos </a></li>
+                                </ul>
+                            </li>
+                            <li>
+                                <a href="/unico/extCDU/render.action?action=/envelope/consultaSimplesEnvelope/exibir.action&amp;atena_reiniciar_historico=true">Consulta
+                                    Simples</a></li>
+                            <li>
+                                <a href="/unico/extCDU/render.action?action=/documentoAdministrativo/etiquetaEnvelopeEmLote/exibir.action&amp;atena_reiniciar_historico=true">Etiqueta
+                                    em Lote</a></li>
+                            <li class="NOSEPARATOR">
+                                <a href="/unico/extCDU/render.action?action=/envelope/envelopamentoEmLote/exibir.action&amp;atena_reiniciar_historico=true">Envelopamento
+                                    em Lote</a></li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a href="/unico/extCDU/render.action?action=/movimentacao/cancelamentoRecebimento/exibir.action&amp;atena_reiniciar_historico=true">Confirmar
+                            cancelamento de recebimento</a></li>
+                    <li>
+                        <a class="NOLINK" href="javascript:;" style="padding-right: 16px;"><span class="SMS"><img
+                                src="../img/../skin/img/arrow.png" alt="+"
+                                style="display:block;border:0;width:0;height:0;"></span>Relatórios de Controle de
+                            Instauração de IPL/TCO</a>
+                        <ul class="SM">
+                            <li>
+                                <a href="/unico/requisicaoInstauracaoPorPeriodo/preImprimir.action?atena_reiniciar_historico=true">1.
+                                    Relatório de Requisição de Instaurações de IPL/TCO por Período</a></li>
+                            <li>
+                                <a href="/unico/requisicaoInstauracaoIPL/preImprimir.action?atena_reiniciar_historico=true">2.
+                                    Relatório de Requisições Sem Informação de Instauração de IPL/TCO</a></li>
+                            <li>
+                                <a href="/unico/requisicaoComInstauracaoNaoEnviadoMpf/preImprimir.action?atena_reiniciar_historico=true">3.
+                                    Relatório de Requisição com Informação de Instauração e que o IPL/TCO não foi
+                                    enviado ao MPF</a></li>
+                            <li class="NOSEPARATOR">
+                                <a href="/unico/controleDePrazoDeInstauracaoIPL/preConsultar.action?atena_reiniciar_historico=true">4.
+                                    Relatório de Requisição cujos IPL/TCO foram instaurados e enviados ao MPF</a></li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a href="/unico/extCDU/render.action?action=/modeloExpediente/exibir.action&amp;atena_reiniciar_historico=true">Modelos
+                            de Documento</a></li>
+                    <li>
+                        <a href="/unico/unico-v2/app/modules/controlePrazo/ControlePrazoExpedientesView.html">Controle
+                            de Prazo</a></li>
+                    <li class="NOSEPARATOR">
+                        <a href="/unico/unico-v2/app/modules/documentoAdministrativo/minuta/consultaPendentesEfetivacao/ConsultaPendentesEfetivacaoView.html">Minutas
+                            Pendentes de Efetivação</a></li>
+                </ul>
+            </li>
+            <li>
+                <a class="NOLINK" href="javascript:;">Arquivo</a>
+                <ul class="SM">
+                    <li>
+                        <a href="/unico/extCDU/render.action?action=/arquivo/exibir.action&amp;atena_reiniciar_historico=true">Incluir
+                            Arquivo</a></li>
+                    <li>
+                        <a href="/unico/extCDU/render.action?action=/arquivo/documentoEProcedimentoExtrajudicialArquivado/exibir.action&amp;atena_reiniciar_historico=true">Consultar
+                            Expedientes Arquivados</a></li>
+                    <li>
+                        <a href="/unico/extCDU/render.action?action=/arquivo/transferencia/paginaTransferirArquivos.action&amp;atena_reiniciar_historico=true">Transferir
+                            Arquivos</a></li>
+                    <li>
+                        <a href="/unico/extCDU/render.action?action=/arquivo/transferencia/paginaReceberArquivosTransferidos.action&amp;atena_reiniciar_historico=true">Receber
+                            Arquivos</a></li>
+                    <li class="NOSEPARATOR">
+                        <a href="/unico/extCDU/render.action?action=/arquivo/transferencia/paginaArquivosTransferidos.action&amp;atena_reiniciar_historico=true">Consultar
+                            Arquivos Transferidos</a></li>
+                </ul>
+            </li>
+            <li>
+                <a class="NOLINK" href="javascript:;">Procedimento Extrajudicial/Adm</a>
+                <ul class="SM">
+                    <li>
+                        <a href="/unico/extCDU/render.action?action=/consultaAutoAdministrativo/consultaSimples/exibir.action&amp;atena_reiniciar_historico=true">Consultar</a>
+                    </li>
+                    <li>
+                        <a href="/unico/extCDU/render.action?action=/distribuicao/conferenciaDistribuicao/exibirAutoAdministrativo.action&amp;atena_reiniciar_historico=true">Consultar
+                            Distribuição</a></li>
+                    <li>
+                        <a href="/unico/extCDU/render.action?action=/distribuicao/autoAdministrativo/lote/exibir.action&amp;atena_reiniciar_historico=true">Distribuição
+                            em Lote</a></li>
+                    <li>
+                        <a href="/unico/extCDU/render.action?action=/movimentacao/movimentacaoAutoAdministrativoLote/exibir.action&amp;atena_reiniciar_historico=true">Movimentar
+                            em Lote</a></li>
+                    <li>
+                        <a href="/unico/extCDU/render.action?action=/movimentacao/cancelamentoRecebimento/exibir.action&amp;atena_reiniciar_historico=true">Confirmar
+                            cancelamento de recebimento</a></li>
+                    <li>
+                        <a href="/unico/extCDU/render.action?action=/processoJudicial/operacao/exibir.action&amp;atena_reiniciar_historico=true">Operações
+                            Especiais</a></li>
+                    <li class="NOSEPARATOR">
+                        <a href="/unico/unico-v2/app/modules/extraJudicial/arquivamento/lote/ArquivamentoLoteView.html">Arquivamento
+                            em Lote</a></li>
+                </ul>
+            </li>
+            <li>
+                <a class="NOLINK" href="javascript:;">Processo Judicial/IPL</a>
+                <ul class="SM">
+                    <li>
+                        <a href="/unico/extCDU/render.action?action=/distribuicao/conferenciaDistribuicao/exibirProcessoJudicial.action&amp;atena_reiniciar_historico=true">Conferência
+                            Distribuição</a></li>
+                    <li>
+                        <a href="/unico/extCDU/render.action?action=/consultaAutoJudicial/consultaSimples/exibir.action&amp;atena_reiniciar_historico=true">Consultar</a>
+                    </li>
+                    <li>
+                        <a href="/unico/extCDU/render.action?action=/distribuicao/termoConclusao/exibir.action&amp;atena_reiniciar_historico=true">Termo
+                            de Distribuição/Conclusão</a></li>
+                    <li>
+                        <a class="NOLINK" href="javascript:;" style="padding-right: 16px;"><span class="SMS"><img
+                                src="../img/../skin/img/arrow.png" alt="+"
+                                style="display:block;border:0;width:0;height:0;"></span>Processo Eletrônico</a>
+                        <ul class="SM">
+                            <li>
+                                <a href="/unico/extCDU/render.action?action=/processoEletronico/importaProcesso/exibir.action&amp;atena_reiniciar_historico=true">Importar
+                                    Processo Manualmente</a></li>
+                            <li>
+                                <a href="/unico/unico-v2/app/modules/assinaturaManifestacao/webSocket/AssinaturaManifestacaoEmLoteView.html">Assinar
+                                    Manifestações Nova</a></li>
+                            <li>
+                                <a href="/unico/unico-v2/app/modules/assinaturaManifestacao/enviarManifestacoesAssinadas/EnvioManifestacaoView.html">Enviar
+                                    Manifestações Assinadas Nova</a></li>
+                            <li>
+                                <a href="/unico/extCDU/render.action?action=/processoEletronico/assinarEmLote/exibir.action&amp;atena_reiniciar_historico=true">Assinar
+                                    Manifestações para Envio</a></li>
+                            <li>
+                                <a href="/unico/extCDU/render.action?action=/processoEletronico/enviarManifestacao/exibir.action?apenasImprimir=true.action&amp;atena_reiniciar_historico=true">Enviar
+                                    Manifestações Assinadas</a></li>
+                            <li>
+                                <a href="/unico/extCDU/render.action?action=/processoEletronico/acompanharRemessaManifestacao/exibir.action&amp;atena_reiniciar_historico=true">Acompanhar
+                                    Remessa das Manifestações</a></li>
+                            <li class="NOSEPARATOR">
+                                <a href="/unico/extCDU/render.action?action=/processoEletronico/atualizacaoPeca/exibir.action&amp;atena_reiniciar_historico=true">Ver
+                                    Atualizações de Autos Eletrônicos</a></li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a class="NOLINK" href="javascript:;" style="padding-right: 16px;"><span class="SMS"><img
+                                src="../img/../skin/img/arrow.png" alt="+"
+                                style="display:block;border:0;width:0;height:0;"></span>Distribuição</a>
+                        <ul class="SM">
+                            <li class="NOSEPARATOR">
+                                <a href="/unico/extCDU/render.action?action=/processoJudicial/distribuicao/cancelamento/exibir.action&amp;atena_reiniciar_historico=true">Consultar/Cancelar
+                                    Lotes</a></li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a class="NOLINK" href="javascript:;" style="padding-right: 16px;"><span class="SMS"><img
+                                src="../img/../skin/img/arrow.png" alt="+"
+                                style="display:block;border:0;width:0;height:0;"></span>Manifestação</a>
+                        <ul class="SM">
+                            <li>
+                                <a href="/unico/unico-v2/app/modules/manifestacao/ManifestacaoView.html#/incluir">Incluir</a>
+                            </li>
+                            <li>
+                                <a href="/unico/unico-v2/app/modules/manifestacao/ManifestacaoView.html#/incluirLote">Incluir
+                                    em Lote</a></li>
+                            <li>
+                                <a href="/unico/extCDU/render.action?action=/manifestacao/consultaManifestacao/exibir.action&amp;atena_reiniciar_historico=true">Consultar
+                                    Vinculada</a></li>
+                            <li>
+                                <a href="/unico/extCDU/render.action?action=/manifestacao/manifestacaoAvulsa/exibir.action&amp;atena_reiniciar_historico=true">Consultar
+                                    Avulsa</a></li>
+                            <li>
+                                <a href="/unico/unico-v2/app/modules/assinaturaManifestacao/webSocket/AssinaturaManifestacaoEmLoteView.html">Assinar
+                                    Manifestações Digitalmente</a></li>
+                            <li>
+                                <a href="/unico/extCDU/render.action?action=/processoEletronico/assinarFisicaEmLote/exibir.action&amp;atena_reiniciar_historico=true">Assinar
+                                    Manifestações</a></li>
+                            <li>
+                                <a href="/unico/extCDU/render.action?action=/processoEletronico/enviarManifestacao/exibir.action?apenasImprimir=false&amp;atena_reiniciar_historico=true">Imprimir
+                                    Manifestações Assinadas</a></li>
+                            <li class="NOSEPARATOR">
+                                <a href="/unico/extCDU/render.action?action=/modeloManifestacao/exibir.action&amp;atena_reiniciar_historico=true">Modelos
+                                    de Manifestação</a></li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a class="NOLINK" href="javascript:;" style="padding-right: 16px;"><span class="SMS"><img
+                                src="../img/../skin/img/arrow.png" alt="+"
+                                style="display:block;border:0;width:0;height:0;"></span>Movimentação</a>
+                        <ul class="SM">
+                            <li>
+                                <a href="/unico/extCDU/render.action?action=/movimentacao/movimentacaoJudicialLote/exibirEncaminharParaRemessaEmLote.action&amp;atena_reiniciar_historico=true">Encaminhar
+                                    para remessa a órgão externo em lote</a></li>
+                            <li>
+                                <a href="/unico/extCDU/render.action?action=/movimentacao/movimentacaoJudicialLote/exibir.action&amp;atena_reiniciar_historico=true">Saída
+                                    Direta para externo com manifestação em lote</a></li>
+                            <li class="NOSEPARATOR">
+                                <a href="/unico/extCDU/render.action?action=/movimentacao/impressaoGuiaMovimentacaoProcessoJudicial/exibirImpressaoGuiaMovimentacaoProcessoJudicialEmLote.action&amp;atena_reiniciar_historico=true">Impressão
+                                    de guia em lote</a></li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a class="NOLINK" href="javascript:;" style="padding-right: 16px;"><span class="SMS"><img
+                                src="../img/../skin/img/arrow.png" alt="+"
+                                style="display:block;border:0;width:0;height:0;"></span>Sessão Audiência</a>
+                        <ul class="SM">
+                            <li>
+                                <a href="/unico/extCDU/render.action?action=/processoJudicial/sessaoAudiencia/exibir.action&amp;atena_reiniciar_historico=true">Incluir/Consultar</a>
+                            </li>
+                            <li class="NOSEPARATOR">
+                                <a href="/unico/sessaoAudienciaGuia/preIncluir.action?atena_reiniciar_historico=true">Imprimir
+                                    Pauta de Audiência</a></li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a href="/unico/extCDU/render.action?action=/processoJudicial/pautaJulgamento/exibir.action&amp;atena_reiniciar_historico=true">Pauta
+                            de Julgamento</a></li>
+                    <li>
+                        <a href="/unico/extCDU/render.action?action=/processoJudicial/operacao/exibir.action&amp;atena_reiniciar_historico=true">Operações
+                            Especiais</a></li>
+                    <li>
+                        <a href="/unico/extCDU/render.action?action=/distribuicaoIntegrada/extrato/extratoConclusaoPorOficio/exibir.action&amp;atena_reiniciar_historico=true">Extrato
+                            de Conclusão Por Oficio</a></li>
+                    <li>
+                        <a class="NOLINK" href="javascript:;" style="padding-right: 16px;"><span class="SMS"><img
+                                src="../img/../skin/img/arrow.png" alt="+"
+                                style="display:block;border:0;width:0;height:0;"></span>Estatística</a>
+                        <ul class="SM">
+                            <li class="NOSEPARATOR">
+                                <a href="/unico/extCDU/render.action?action=/manifestacao/estatisticaProdutividade/estatisticaProdutividade.action&amp;atena_reiniciar_historico=true">Estatística
+                                    de Produtividade</a></li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a class="NOLINK" href="javascript:;" style="padding-right: 16px;"><span class="SMS"><img
+                                src="../img/../skin/img/arrow.png" alt="+"
+                                style="display:block;border:0;width:0;height:0;"></span>Impressão de Guias</a>
+                        <ul class="SM">
+                            <li>
+                                <a href="/unico/extCDU/render.action?action=/movimentacao/impressaoGuiaMovimentacaoProcessoJudicial/exibirPaginaReimpressaoGuiaJudicial.action&amp;atena_reiniciar_historico=true">Reimprimir
+                                    Guia Judicial</a></li>
+                            <li class="NOSEPARATOR">
+                                <a href="/unico/guiaMovimentacaoManifestacao/preIncluir.action?atena_reiniciar_historico=true">Reimprimir
+                                    Guia de Movimentação da Manifestação</a></li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a href="/unico/controleInqueritosPoliciais/preConsultar.action?atena_reiniciar_historico=true">Relatório
+                            de Controle de Tramitação de IPL/TCO</a></li>
+                    <li>
+                        <a href="/unico/processoJudicialComPrazoFinalDeDevolucao/preImprimir.action?atena_reiniciar_historico=true">Relatório
+                            de Autos Judiciais Com Prazo Final de Devolução</a></li>
+                    <li>
+                        <a href="http://aplicativos.pgr.mpf.mp.br/fipol?atena_reiniciar_historico=true" target="_blank">Ferramenta
+                            de Inspeção de IPL - FIPOL</a></li>
+                    <li class="NOSEPARATOR">
+                        <a href="/unico/unico-v2/app/modules/processoJudicial/alteraSituacaoAutuacaoLote/AlteraSituacaoAutuacaoLoteView.html#/lote"
+                           target="_blank">Altera Situação da Autuação em Lote </a></li>
+                </ul>
+            </li>
+            <li>
+                <a class="NOLINK" href="javascript:;">Apontamento</a>
+                <ul class="SM">
+                    <li>
+                        <a class="NOLINK" href="javascript:;" style="padding-right: 16px;"><span class="SMS"><img
+                                src="../img/../skin/img/arrow.png" alt="+"
+                                style="display:block;border:0;width:0;height:0;"></span>Eventos</a>
+                        <ul class="SM">
+                            <li>
+                                <a href="/unico/evento/preIncluir.action?atena_reiniciar_historico=true">Incluir</a>
+                            </li>
+                            <li class="NOSEPARATOR">
+                                <a href="/unico/extCDU/render.action?action=/consultaEvento/exibir.action&amp;atena_reiniciar_historico=true">Consultar</a>
+                            </li>
+                        </ul>
+                    </li>
+                    <li class="NOSEPARATOR">
+                        <a class="NOLINK" href="javascript:;" style="padding-right: 16px;"><span class="SMS"><img
+                                src="../img/../skin/img/arrow.png" alt="+"
+                                style="display:block;border:0;width:0;height:0;"></span>Notas</a>
+                        <ul class="SM">
+                            <li class="NOSEPARATOR">
+                                <a href="/unico/notas/preConsultar.action?atena_reiniciar_historico=true">Consultar</a>
+                            </li>
+                        </ul>
+                    </li>
+                </ul>
+            </li>
+            <li>
+                <a class="NOLINK" href="javascript:;">Consultas</a>
+                <ul class="SM">
+                    <li>
+                        <a href="/unico/extCDU/render.action?action=/comum/designacao/consulta/exibir.action&amp;atena_reiniciar_historico=true">Consulta
+                            de Designação</a></li>
+                    <li>
+                        <a href="/unico/extCDU/render.action?action=/integracao/solr/exibir.action&amp;atena_reiniciar_historico=true">Correlatos
+                            - autos admin/judiciais</a></li>
+                    <li>
+                        <a href="/unico/extCDU/render.action?action=/integracao/documentoAdministrativo/exibir.action&amp;atena_reiniciar_historico=true">Documento
+                            Administrativo</a></li>
+                    <li>
+                        <a href="/unico/extCDU/render.action?action=/consultaExpedienteParte/exibir.action&amp;atena_reiniciar_historico=true">Expediente
+                            por Parte</a></li>
+                    <li>
+                        <a href="/unico/extCDU/render.action?action=/consultaAutoAdministrativo/consultaSimples/exibir.action&amp;atena_reiniciar_historico=true">Procedimento
+                            Extrajudicial/Adm</a></li>
+                    <li>
+                        <a href="/unico/extCDU/render.action?action=/consultaAutoJudicial/consultaSimples/exibir.action&amp;atena_reiniciar_historico=true">Auto
+                            Judicial/IPL</a></li>
+                    <li>
+                        <a href="/unico/extCDU/render.action?action=/distribuicaoIntegrada/extrato/exibir.action&amp;atena_reiniciar_historico=true">Extrato
+                            de Grupo de Distribuição</a></li>
+                    <li>
+                        <a href="/unico/extCDU/render.action?action=/manifestacao/consultaManifestacao/exibir.action&amp;atena_reiniciar_historico=true">Manifestação</a>
+                    </li>
+                    <li>
+                        <a href="/unico/extCDU/render.action?action=/manifestacao/manifestacaoAvulsa/exibir.action&amp;atena_reiniciar_historico=true">Manifestação
+                            Avulsa</a></li>
+                    <li>
+                        <a href="/unico/extCDU/render.action?action=/processoJudicial/sessaoAudiencia/exibir.action&amp;atena_reiniciar_historico=true">Sessão
+                            de Audiência</a></li>
+                    <li>
+                        <a href="/unico/extCDU/render.action?action=/comum/anotacao/consultaAnotacao/exibir.action&amp;atena_reiniciar_historico=true">Anotações</a>
+                    </li>
+                    <li>
+                        <a class="NOLINK" href="javascript:;" style="padding-right: 16px;"><span class="SMS"><img
+                                src="../img/../skin/img/arrow.png" alt="+"
+                                style="display:block;border:0;width:0;height:0;"></span>Apontamento</a>
+                        <ul class="SM">
+                            <li>
+                                <a href="/unico/evento/preConsultar.action?atena_reiniciar_historico=true">Eventos</a>
+                            </li>
+                            <li class="NOSEPARATOR">
+                                <a href="/unico/notas/preConsultar.action?atena_reiniciar_historico=true">Notas</a></li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a class="NOLINK" href="javascript:;" style="padding-right: 16px;"><span class="SMS"><img
+                                src="../img/../skin/img/arrow.png" alt="+"
+                                style="display:block;border:0;width:0;height:0;"></span>Etiquetas</a>
+                        <ul class="SM">
+                            <li class="NOSEPARATOR">
+                                <a href="/unico/imprimirEtiquetasDocumentos/preImpressao.action?atena_reiniciar_historico=true">Impressão
+                                    de Etiquetas</a></li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a href="https://portal.mpf.mp.br/extractus?atena_reiniciar_historico=true" target="_blank">EXTRACTUS
+                            - Emissão e Criação de Relatórios</a></li>
+                    <li>
+                        <a href="/unico/gcons/remeterPublicacao.action?atena_reiniciar_historico=true" target="_blank">GCONS
+                            - Relatórios Publicados - Nacionais/Estaduais</a></li>
+                    <li>
+                        <a href="/unico/gcons/remeterCriacao.action?atena_reiniciar_historico=true" target="_blank">GCONS
+                            - Montagem de Relatórios</a></li>
+                    <li>
+                        <a href="/unico/aptus/remeterAplicacao.action?atena_reiniciar_historico=true" target="_blank">Aptus</a>
+                    </li>
+                    <li>
+                        <a href="/unico/extCDU/render.action?action=consulta/movimentacaoDocumento/exibir.action&amp;atena_reiniciar_historico=true">Consulta
+                            de Movimentação de Documentos</a></li>
+                    <li class="NOSEPARATOR">
+                        <a href="http://bi.mpf.mp.br/MicroStrategy/servlet/mstrWeb?server=JUNO.PGR.MPF.MP.BR&amp;uid=unico&amp;pwd=PGRUn4&amp;atena_reiniciar_historico=true"
+                           target="_blank">Informações Gerenciais (BI)</a></li>
+                </ul>
+            </li>
+            <li>
+                <a class="NOLINK" href="javascript:;">Tabelas</a>
+                <ul class="SM">
+                    <li>
+                        <a href="/unico/extCDU/render.action?action=/comum/designacao/lote/exibir.action&amp;atena_reiniciar_historico=true">Designação
+                            em Lote</a></li>
+                    <li>
+                        <a class="NOLINK" href="javascript:;" style="padding-right: 16px;"><span class="SMS"><img
+                                src="../img/../skin/img/arrow.png" alt="+"
+                                style="display:block;border:0;width:0;height:0;"></span>Ator</a>
+                        <ul class="SM">
+                            <li>
+                                <a href="/unico/atorDocumentoConsulta/preConsultar.action?atena_reiniciar_historico=true">Consultar</a>
+                            </li>
+                            <li>
+                                <a href="/unico/complementoAtor/preConsultar.action?atena_reiniciar_historico=true">Complemento</a>
+                            </li>
+                            <li>
+                                <a href="/unico/relacionamentoAtor/preIncluir.action?atena_reiniciar_historico=true">Relacionamento</a>
+                            </li>
+                            <li>
+                                <a href="/unico/tipoComplemento/preIncluir.action?atena_reiniciar_historico=true">Tipo
+                                    de Complemento</a></li>
+                            <li>
+                                <a href="/unico/tipoRelacionamento/preIncluir.action?atena_reiniciar_historico=true">Tipo
+                                    de Relacionamento</a></li>
+                            <li class="NOSEPARATOR">
+                                <a href="/unico/tipoTelefoneAtor/preIncluir.action?atena_reiniciar_historico=true">Tipo
+                                    de Telefone do Ator</a></li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a class="NOLINK" href="javascript:;" style="padding-right: 16px;"><span class="SMS"><img
+                                src="../img/../skin/img/arrow.png" alt="+"
+                                style="display:block;border:0;width:0;height:0;"></span>Campo Extra</a>
+                        <ul class="SM">
+                            <li class="NOSEPARATOR">
+                                <a href="/unico/complementoInformacao/preIncluir.action?atena_reiniciar_historico=true">Complemento
+                                    de Informação</a></li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a class="NOLINK" href="javascript:;" style="padding-right: 16px;"><span class="SMS"><img
+                                src="../img/../skin/img/arrow.png" alt="+"
+                                style="display:block;border:0;width:0;height:0;"></span>Judicial</a>
+                        <ul class="SM">
+                            <li>
+                                <a class="NOLINK" href="javascript:;" style="padding-right: 16px;"><span
+                                        class="SMS"><img src="../img/../skin/img/arrow.png" alt="+"
+                                                         style="display:block;border:0;width:0;height:0;"></span>Tipos</a>
+                                <ul class="SM">
+                                    <li>
+                                        <a href="/unico/extCDU/render.action?action=/processoJudicial/tipoConvocacao/exibir.action&amp;atena_reiniciar_historico=true">Tipo
+                                            de Convocação</a></li>
+                                    <li>
+                                        <a href="/unico/extCDU/render.action?action=/processoJudicial/tipoParticipacaoAudiencia/exibir.action&amp;atena_reiniciar_historico=true">Tipo
+                                            de Participacao em Audiência</a></li>
+                                    <li>
+                                        <a href="/unico/extCDU/render.action?action=/processoJudicial/tipoResultado/exibir.action&amp;atena_reiniciar_historico=true">Tipo
+                                            de Resultado</a></li>
+                                    <li class="NOSEPARATOR">
+                                        <a href="/unico/extCDU/render.action?action=/processoJudicial/tipoSentido/exibir.action&amp;atena_reiniciar_historico=true">Tipo
+                                            de Sentido</a></li>
+                                </ul>
+                            </li>
+                            <li>
+                                <a href="/unico/extCDU/render.action?action=/processoJudicial/classeJudiciaria/exibir.action&amp;atena_reiniciar_historico=true">Classe
+                                    Judiciária</a></li>
+                            <li>
+                                <a href="/unico/complementoPena/preIncluir.action?atena_reiniciar_historico=true">Complemento
+                                    de Pena</a></li>
+                            <li>
+                                <a href="/unico/delegado/preIncluir.action?atena_reiniciar_historico=true">Delegado</a>
+                            </li>
+                            <li>
+                                <a href="/unico/extCDU/render.action?action=/processoJudicial/manutencaoFases/exibir.action&amp;atena_reiniciar_historico=true">Fases
+                                    do Auto Judicial</a></li>
+                            <li>
+                                <a href="/unico/extCDU/render.action?action=/processoJudicial/formulaCalculoDigitoVerificador/exibir.action&amp;atena_reiniciar_historico=true">Máscara
+                                    Judicial</a></li>
+                            <li>
+                                <a href="/unico/orgaoJudiciario/preIncluir.action?atena_reiniciar_historico=true">Órgão
+                                    do Judiciário</a></li>
+                            <li>
+                                <a href="/unico/orgaoJulgador/preIncluir.action?atena_reiniciar_historico=true">Órgão
+                                    Julgador</a></li>
+                            <li class="NOSEPARATOR">
+                                <a href="/unico/ramoDireito/preIncluir.action?atena_reiniciar_historico=true">Ramo de
+                                    Direito</a></li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a class="NOLINK" href="javascript:;" style="padding-right: 16px;"><span class="SMS"><img
+                                src="../img/../skin/img/arrow.png" alt="+"
+                                style="display:block;border:0;width:0;height:0;"></span>Manutenção</a>
+                        <ul class="SM">
+                            <li>
+                                <a href="/unico/extCDU/render.action?action=/comum/bloqueioMovimentacao/exibir.action&amp;atena_reiniciar_historico=true">Bloqueio
+                                    de Movimentação</a></li>
+                            <li>
+                                <a class="NOLINK" href="javascript:;" style="padding-right: 16px;"><span
+                                        class="SMS"><img src="../img/../skin/img/arrow.png" alt="+"
+                                                         style="display:block;border:0;width:0;height:0;"></span>Grupo
+                                    Temático/Tema</a>
+                                <ul class="SM">
+                                    <li class="NOSEPARATOR">
+                                        <a href="/unico/camara/preConsultar.action?atena_reiniciar_historico=true">Grupo
+                                            Temático</a></li>
+                                </ul>
+                            </li>
+                            <li>
+                                <a class="NOLINK" href="javascript:;" style="padding-right: 16px;"><span
+                                        class="SMS"><img src="../img/../skin/img/arrow.png" alt="+"
+                                                         style="display:block;border:0;width:0;height:0;"></span>Infraestrutura</a>
+                                <ul class="SM">
+                                    <li class="NOSEPARATOR">
+                                        <a href="/unico/extCDU/render.action?action=/infra/exceptionLogReport/exibirExceptionLog.action&amp;atena_reiniciar_historico=true">Consultar
+                                            logs de exceção</a></li>
+                                </ul>
+                            </li>
+                            <li>
+                                <a class="NOLINK" href="javascript:;" style="padding-right: 16px;"><span
+                                        class="SMS"><img src="../img/../skin/img/arrow.png" alt="+"
+                                                         style="display:block;border:0;width:0;height:0;"></span>Tipos</a>
+                                <ul class="SM">
+                                    <li>
+                                        <a href="/unico/extCDU/render.action?action=/procurador/tipoAfastamento/exibir.action&amp;atena_reiniciar_historico=true">Tipo
+                                            de Afastamento</a></li>
+                                    <li>
+                                        <a href="/unico/extCDU/render.action?action=/documentoAdministrativo/tabelasBasicas/tipoDocumento/exibir.action&amp;atena_reiniciar_historico=true">Tipo
+                                            de Documento</a></li>
+                                    <li>
+                                        <a href="/unico/extCDU/render.action?action=/ator/tipoDocumentoPessoal/exibir.action&amp;atena_reiniciar_historico=true">Tipo
+                                            de Documento Pessoal</a></li>
+                                    <li>
+                                        <a href="/unico/extCDU/render.action?action=/comum/tipoRelacao/exibir.action&amp;atena_reiniciar_historico=true">Tipo
+                                            de Relação</a></li>
+                                    <li>
+                                        <a href="/unico/tipoReferencia/preConsultar.action?atena_reiniciar_historico=true">Tipo
+                                            de Referência</a></li>
+                                    <li>
+                                        <a href="/unico/documentoReferencia/preConsultar.action?atena_reiniciar_historico=true">Tipo
+                                            de Referência de Documento</a></li>
+                                    <li>
+                                        <a href="/unico/extCDU/render.action?action=/comum/tipoSigilo/exibir.action&amp;atena_reiniciar_historico=true">Tipo
+                                            de Sigilo</a></li>
+                                    <li>
+                                        <a href="/unico/extCDU/render.action?action=/comum/tipoTarefaNova/exibir.action&amp;atena_reiniciar_historico=true">Tipo
+                                            de Tarefa</a></li>
+                                    <li>
+                                        <a href="/unico/tipoVinculo/preConsultar.action?atena_reiniciar_historico=true">Tipo
+                                            de Vínculo</a></li>
+                                    <li>
+                                        <a href="/unico/extCDU/render.action?action=/comum/informacaoComplementar/tipoInformacaoComplementar/exibir.action&amp;atena_reiniciar_historico=true">Tipo
+                                            de Informação Complementar</a></li>
+                                    <li>
+                                        <a href="/unico/extCDU/render.action?action=/envelope/tipoModalidade/exibir.action&amp;atena_reiniciar_historico=true">Tipo
+                                            de Modalidade</a></li>
+                                    <li class="NOSEPARATOR">
+                                        <a href="/unico/extCDU/render.action?action=/autoAdministrativo/controleprazo/conversaoPossivel/exibir.action&amp;atena_reiniciar_historico=true">Tipo
+                                            de Conversões Possíveis</a></li>
+                                </ul>
+                            </li>
+                            <li>
+                                <a href="/unico/extCDU/render.action?action=/comum/areaAtuacao/exibir.action&amp;atena_reiniciar_historico=true">Área
+                                    de Atuação</a></li>
+                            <li>
+                                <a href="/unico/extCDU/render.action?action=/comum/assunto/exibir.action&amp;atena_reiniciar_historico=true">Assunto</a>
+                            </li>
+                            <li>
+                                <a href="/unico/cargoEfetivo/preConsultar.action?atena_reiniciar_historico=true">Cargo
+                                    Efetivo</a></li>
+                            <li>
+                                <a href="/unico/configuracaoUnidade/preConsultar.action?atena_reiniciar_historico=true">Configuração
+                                    Unidade</a></li>
+                            <li>
+                                <a href="/unico/estagiario/preConsultar.action?atena_reiniciar_historico=true">Estagiário</a>
+                            </li>
+                            <li>
+                                <a href="/unico/etiqueta/preConsultar.action?atena_reiniciar_historico=true">Etiqueta</a>
+                            </li>
+                            <li>
+                                <a href="/unico/genero/preConsultar.action?atena_reiniciar_historico=true">Gênero</a>
+                            </li>
+                            <li>
+                                <a href="/unico/membro/preConsultar.action?atena_reiniciar_historico=true">Membro</a>
+                            </li>
+                            <li>
+                                <a href="/unico/extCDU/render.action?action=/modeloExpediente/exibir.action&amp;atena_reiniciar_historico=true">Modelos
+                                    de Documento</a></li>
+                            <li>
+                                <a href="/unico/extCDU/render.action?action=/modeloManifestacao/exibir.action&amp;atena_reiniciar_historico=true">Modelos
+                                    de Manifestação</a></li>
+                            <li>
+                                <a href="/unico/numeracaoUnica/preConsultar.action?atena_reiniciar_historico=true">Numeração
+                                    Única</a></li>
+                            <li>
+                                <a href="/unico/numeroProcedimento/preConsultar.action?atena_reiniciar_historico=true">Número
+                                    do Procedimento</a></li>
+                            <li>
+                                <a href="/unico/pais/preConsultar.action?atena_reiniciar_historico=true">País</a></li>
+                            <li>
+                                <a href="/unico/referenciaPossivel/preConsultar.action?atena_reiniciar_historico=true">Referência
+                                    Possível</a></li>
+                            <li>
+                                <a href="/unico/servidor/preConsultar.action?atena_reiniciar_historico=true">Servidor</a>
+                            </li>
+                            <li>
+                                <a href="/unico/terceirizado/preConsultar.action?atena_reiniciar_historico=true">Terceirizado</a>
+                            </li>
+                            <li>
+                                <a href="/unico/unidadeOrganica/preConsultar.action?atena_reiniciar_historico=true">Unidade
+                                    Orgânica</a></li>
+                            <li>
+                                <a href="/unico/extCDU/render.action?action=/envelope/relatorio/exibir.action&amp;atena_reiniciar_historico=true">Relatórios</a>
+                            </li>
+                            <li class="NOSEPARATOR">
+                                <a href="/unico/unico-v2/app/modules/configuracaoUnidadeSetor/ConfiguracaoUnidadeSetorFormView.html#/configuracaoUnidadeSetor/recuperarPorUsuarioLogado"
+                                   target="_blank">Configuração do Setor</a></li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a href="/unico/banco/preConsultar.action?atena_reiniciar_historico=true">Banco</a></li>
+                    <li>
+                        <a href="/unico/empresa/preConsultar.action?atena_reiniciar_historico=true">Pessoa Jurídica</a>
+                    </li>
+                    <li>
+                        <a href="/unico/fato/preIncluir.action?atena_reiniciar_historico=true">Fato</a></li>
+                    <li>
+                        <a href="/unico/extCDU/render.action?action=/comum/baseNormativa/exibir.action&amp;atena_reiniciar_historico=true">Leis</a>
+                    </li>
+                    <li>
+                        <a class="NOLINK" href="javascript:;" style="padding-right: 16px;"><span class="SMS"><img
+                                src="../img/../skin/img/arrow.png" alt="+"
+                                style="display:block;border:0;width:0;height:0;"></span>Configurar
+                            Procurador/Gabinete/Ofício/Grupo de Distribuição</a>
+                        <ul class="SM">
+                            <li>
+                                <a href="/unico/extCDU/render.action?action=/gabinete/exibir.action&amp;atena_reiniciar_historico=true">Gabinete</a>
+                            </li>
+                            <li>
+                                <a class="NOLINK" href="javascript:;" style="padding-right: 16px;"><span
+                                        class="SMS"><img src="../img/../skin/img/arrow.png" alt="+"
+                                                         style="display:block;border:0;width:0;height:0;"></span>Grupos</a>
+                                <ul class="SM">
+                                    <li>
+                                        <a href="/unico/extCDU/render.action?action=/grupoDistribuicao/exibir.action&amp;atena_reiniciar_historico=true">Grupo
+                                            de Distribuição</a></li>
+                                    <li>
+                                        <a href="/unico/extCDU/render.action?action=/grupoDesoneracao/exibir.action&amp;atena_reiniciar_historico=true">Grupo
+                                            de Desoneração</a></li>
+                                    <li class="NOSEPARATOR">
+                                        <a href="/unico/extCDU/render.action?action=/grupoSubstituicao/exibir.action&amp;atena_reiniciar_historico=true">Grupo
+                                            de Substituição</a></li>
+                                </ul>
+                            </li>
+                            <li>
+                                <a href="/unico/extCDU/render.action?action=/motivoFimDistribuicao/exibir.action&amp;atena_reiniciar_historico=true">Motivo
+                                    Fim Distribuição</a></li>
+                            <li>
+                                <a href="/unico/extCDU/render.action?action=/oficio/exibir.action&amp;atena_reiniciar_historico=true">Ofício</a>
+                            </li>
+                            <li>
+                                <a href="/unico/extCDU/render.action?action=/procurador/exibir.action&amp;atena_reiniciar_historico=true">Procurador</a>
+                            </li>
+                            <li class="NOSEPARATOR">
+                                <a href="/unico/extCDU/render.action?action=/procurador/relatorioSuspensoes/exibir.action&amp;atena_reiniciar_historico=true">Relatório
+                                    de Suspensões</a></li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a class="NOLINK" href="javascript:;" style="padding-right: 16px;"><span class="SMS"><img
+                                src="../img/../skin/img/arrow.png" alt="+"
+                                style="display:block;border:0;width:0;height:0;"></span>Configurar Rotina de
+                            Designação/Grupo de Designação</a>
+                        <ul class="SM">
+                            <li class="NOSEPARATOR">
+                                <a href="/unico/extCDU/render.action?action=/comum/designacao/grupoDesignacao/exibir.action&amp;atena_reiniciar_historico=true">Grupo
+                                    de Designação</a></li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a href="/unico/orgaoGoverno/preIncluir.action?atena_reiniciar_historico=true">Órgão do
+                            Governo</a></li>
+                    <li>
+                        <a href="/unico/pessoaFisica/preConsultar.action?atena_reiniciar_historico=true">Pessoa
+                            Física</a></li>
+                    <li>
+                        <a href="/unico/extCDU/render.action?action=/envelope/localidade/exibir.action&amp;atena_reiniciar_historico=true">Especificação
+                            destino de malote</a></li>
+                    <li>
+                        <a class="NOLINK" href="javascript:;" style="padding-right: 16px;"><span class="SMS"><img
+                                src="../img/../skin/img/arrow.png" alt="+"
+                                style="display:block;border:0;width:0;height:0;"></span>Visibilidade</a>
+                        <ul class="SM">
+                            <li>
+                                <a href="/unico/extCDU/render.action?action=/visibilidade/delegacao/exibir.action&amp;atena_reiniciar_historico=true">Designar
+                                    Delegados</a></li>
+                            <li>
+                                <a href="/unico/extCDU/render.action?action=/visibilidade/permissao/exibir.action&amp;atena_reiniciar_historico=true">Atribuir
+                                    Visibilidade</a></li>
+                            <li class="NOSEPARATOR">
+                                <a href="/unico/unico-v2/app/modules/documento/visibilidade/visibilidadeLote/VisibilidadeLoteView.html#/incluir">Atribuir
+                                    Visibilidade em Lote</a></li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a href="/unico/unico-v2/app/modules/mesclagem/MesclagemView.html#/incluir">Mesclagem de
+                            Autuações</a></li>
+                    <li class="NOSEPARATOR">
+                        <a href="/unico/unico-v2/app/modules/manutencao/separacaoAutuacao/SeparacaoAutuacaoView.html#/validar">Separação
+                            de Autuações</a></li>
+                </ul>
+            </li>
+            <li>
+                <a class="NOLINK" href="javascript:;">Ajuda</a>
+                <ul class="SM">
+                    <li>
+                        <a href="https://portal.mpf.mp.br/wiki/index.php5/Único:Sistema_Único?atena_reiniciar_historico=true"
+                           target="_blank">Wiki MPF - Manual do Sistema Único</a></li>
+                    <li class="NOSEPARATOR">
+                        <a href="https://portal.mpf.mp.br/snp/?atena_reiniciar_historico=true" target="_blank">SNP</a>
+                    </li>
+                </ul>
+            </li>
+            <li class="NOSEPARATOR">
+                <a href="/unico/j_spring_security_logout" id="img_logout"
+                   title="Efetuar logout do Sistema Único">Sair</a></li>
+        </ul>
+    </div>
+</div>
+
+<div class="historico_gerenciador"></div>
+
+<div id="div_ErrosEMensagens">
+    <div></div>
+</div>
+<div class="tituloPagina"></div>
+
+
+<div class="tab">
+    <script charset="UTF-8" type="text/javascript">
+        <!--
+        //Script para abas que utilizam ajax
+        var abaAjaxAtivadabarraAbas_1550888688763 = false;
+        var barraAbas_1550888688763 = new Array();
+        var indicebarraAbas_1550888688763 = 0;
+        barraAbas_1550888688763[0] = new Array();
+        barraAbas_1550888688763[0][0] = 'paginaAtena';
+        barraAbas_1550888688763[0][1] = false;
+        indicebarraAbas_1550888688763++;
+        barraAbas_1550888688763[indicebarraAbas_1550888688763] = new Array();
+        barraAbas_1550888688763[indicebarraAbas_1550888688763][0] = 'noticias';
+        barraAbas_1550888688763[indicebarraAbas_1550888688763][1] = true;
+        indicebarraAbas_1550888688763++;
+        barraAbas_1550888688763[indicebarraAbas_1550888688763] = new Array();
+        barraAbas_1550888688763[indicebarraAbas_1550888688763][0] = 'agenda';
+        barraAbas_1550888688763[indicebarraAbas_1550888688763][1] = true;
+        indicebarraAbas_1550888688763++;
+        barraAbas_1550888688763[indicebarraAbas_1550888688763] = new Array();
+        barraAbas_1550888688763[indicebarraAbas_1550888688763][0] = 'atualizacoes';
+        barraAbas_1550888688763[indicebarraAbas_1550888688763][1] = true;
+        indicebarraAbas_1550888688763++;
+        //-->
+    </script>
+    <div id="Atena_abas" class="barraAbas" style="display: table;">
+        <table cellspacing="0" cellpadding="0">
+            <tbody>
+            <tr>
+                <td>
+                    <div class="abaLinha" style="display: inline-table;">
+                        <table cellspacing="0" cellpadding="0">
+                            <tbody>
+                            <tr>
+                                <td>
+                                    <div style="display: table-cell;" id="paginaAtena_cen" class="abaInativa"
+                                         onclick="if(!abaAjaxAtivadabarraAbas_1550888688763)return true;return carregarAba(idAba='paginaAtena', abas=barraAbas_1550888688763, img_esq='/unico/recursos/imagens/padrao/aba_esq.gif', img_esq_ativa='/unico/recursos/imagens/padrao/aba_esq_ativa.gif', img_dir='/unico/recursos/imagens/padrao/aba_dir.gif', img_dir_ativa='/unico/recursos/imagens/padrao/aba_dir_ativa.gif', img_cen='/unico/recursos/imagens/padrao/aba_cen.gif', img_cen_ativa='/unico/recursos/imagens/padrao/aba_cen_ativa.gif',utilizaCache=false);">
+                                        <a href="/unico/gerenciador/consultar.action"
+                                           onclick="if(!abaAjaxAtivadabarraAbas_1550888688763)return true;return carregarAba(idAba='paginaAtena', abas=barraAbas_1550888688763, img_esq='/unico/recursos/imagens/padrao/aba_esq.gif', img_esq_ativa='/unico/recursos/imagens/padrao/aba_esq_ativa.gif', img_dir='/unico/recursos/imagens/padrao/aba_dir.gif', img_dir_ativa='/unico/recursos/imagens/padrao/aba_dir_ativa.gif', img_cen='/unico/recursos/imagens/padrao/aba_cen.gif', img_cen_ativa='/unico/recursos/imagens/padrao/aba_cen_ativa.gif',utilizaCache=false);"><span
+                                                style="text-indent: -9999em;position: absolute;">Gerenciador</span></a>
+                                        <font class="linkAba">Gerenciador</font></div>
+                                </td>
+                                <td>
+                                    <div style="display: table-cell;" id="noticias_cen" class="abaInativa"
+                                         onclick="if(carregarAba(idAba='noticias', abas=barraAbas_1550888688763, img_esq='/recursos/imagens/padrao/aba_esq.gif', img_esq_ativa='/recursos/imagens/padrao/aba_esq_ativa.gif', img_dir='/recursos/imagens/padrao/aba_dir.gif', img_dir_ativa='/recursos/imagens/padrao/aba_dir_ativa.gif', img_cen='/recursos/imagens/padrao/aba_cen.gif', img_cen_ativa='/recursos/imagens/padrao/aba_cen_ativa.gif',utilizaCache=true)){abaAjaxAtivadanoticias=true; criaLoader();  getElemento('noticias').appendChild(criarIframe('frame_noticias',null,null,function(){removeLoader();})); getElemento('frame_noticias').src='/unico/noticia/alertaNoticia.action'; }parent.document.getElementById('div_ErrosEMensagens').innerHTML = '<div></div>'">
+                                        <a id="aba_noticias" href="#"
+                                           onclick="if(carregarAba(idAba='noticias', abas=barraAbas_1550888688763, img_esq='/recursos/imagens/padrao/aba_esq.gif', img_esq_ativa='/recursos/imagens/padrao/aba_esq_ativa.gif', img_dir='/recursos/imagens/padrao/aba_dir.gif', img_dir_ativa='/recursos/imagens/padrao/aba_dir_ativa.gif', img_cen='/recursos/imagens/padrao/aba_cen.gif', img_cen_ativa='/recursos/imagens/padrao/aba_cen_ativa.gif',utilizaCache=true)){abaAjaxAtivadanoticias=true; criaLoader();  getElemento('noticias').appendChild(criarIframe('frame_noticias',null,null,function(){removeLoader();})); getElemento('frame_noticias').src='/unico/noticia/alertaNoticia.action'; }parent.document.getElementById('div_ErrosEMensagens').innerHTML = '<div></div>'"><span
+                                                style="text-indent: -9999em;position: absolute;">Notícias</span></a>
+                                        <font class="linkAba">Notícias</font></div>
+                                </td>
+                                <td>
+                                    <div style="display: table-cell;" id="agenda_cen" class="abaAtiva"
+                                         onclick="if(carregarAba(idAba='agenda', abas=barraAbas_1550888688763, img_esq='/unico/recursos/imagens/padrao/aba_esq.gif', img_esq_ativa='/unico/recursos/imagens/padrao/aba_esq_ativa.gif', img_dir='/unico/recursos/imagens/padrao/aba_dir.gif', img_dir_ativa='/unico/recursos/imagens/padrao/aba_dir_ativa.gif', img_cen='/unico/recursos/imagens/padrao/aba_cen.gif', img_cen_ativa='/unico/recursos/imagens/padrao/aba_cen_ativa.gif',utilizaCache=false))sendFormAjax('/unico/agenda/filtrar.action?ajaxParam=pagina', 'agenda', this.form, this,true,null,false,false);abaAjaxAtivadabarraAbas_1550888688763=true;">
+                                        <a id="aba_agenda" href="#"
+                                           onclick="if(carregarAba(idAba='agenda', abas=barraAbas_1550888688763, img_esq='/unico/recursos/imagens/padrao/aba_esq.gif', img_esq_ativa='/unico/recursos/imagens/padrao/aba_esq_ativa.gif', img_dir='/unico/recursos/imagens/padrao/aba_dir.gif', img_dir_ativa='/unico/recursos/imagens/padrao/aba_dir_ativa.gif', img_cen='/unico/recursos/imagens/padrao/aba_cen.gif', img_cen_ativa='/unico/recursos/imagens/padrao/aba_cen_ativa.gif',utilizaCache=false))sendFormAjax('/unico/agenda/filtrar.action?ajaxParam=pagina', 'agenda', this.form, this,true,null,false,false);abaAjaxAtivadabarraAbas_1550888688763=true;"
+                                           accesskey="P"><span
+                                                style="text-indent: -9999em;position: absolute;">Agenda</span></a> <font
+                                            class="linkAba">Agenda</font></div>
+                                </td>
+                                <td>
+                                    <div style="display: table-cell;" id="atualizacoes_cen" class="abaInativa"
+                                         onclick="if(carregarAba(idAba='atualizacoes', abas=barraAbas_1550888688763, img_esq='/recursos/imagens/padrao/aba_esq.gif', img_esq_ativa='/recursos/imagens/padrao/aba_esq_ativa.gif', img_dir='/recursos/imagens/padrao/aba_dir.gif', img_dir_ativa='/recursos/imagens/padrao/aba_dir_ativa.gif', img_cen='/recursos/imagens/padrao/aba_cen.gif', img_cen_ativa='/recursos/imagens/padrao/aba_cen_ativa.gif',utilizaCache=true)){abaAjaxAtivadaatualizacoes=true; criaLoader();  getElemento('atualizacoes').appendChild(criarIframe('frame_atualizacoes',null,null,function(){removeLoader();})); getElemento('frame_atualizacoes').src='/unico/processoEletronico/atualizacaoPeca/exibir.action'; }parent.document.getElementById('div_ErrosEMensagens').innerHTML = '<div></div>'">
+                                        <a id="aba_atualizacoes" href="#"
+                                           onclick="if(carregarAba(idAba='atualizacoes', abas=barraAbas_1550888688763, img_esq='/recursos/imagens/padrao/aba_esq.gif', img_esq_ativa='/recursos/imagens/padrao/aba_esq_ativa.gif', img_dir='/recursos/imagens/padrao/aba_dir.gif', img_dir_ativa='/recursos/imagens/padrao/aba_dir_ativa.gif', img_cen='/recursos/imagens/padrao/aba_cen.gif', img_cen_ativa='/recursos/imagens/padrao/aba_cen_ativa.gif',utilizaCache=true)){abaAjaxAtivadaatualizacoes=true; criaLoader();  getElemento('atualizacoes').appendChild(criarIframe('frame_atualizacoes',null,null,function(){removeLoader();})); getElemento('frame_atualizacoes').src='/unico/processoEletronico/atualizacaoPeca/exibir.action'; }parent.document.getElementById('div_ErrosEMensagens').innerHTML = '<div></div>'"><span
+                                                style="text-indent: -9999em;position: absolute;">Atualizações de Autos Judiciais Eletrônicos</span></a>
+                                        <font class="linkAba">Atualizações de Autos Judiciais Eletrônicos</font></div>
+                                </td>
+                            </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
+</div>
+
+<script charset="UTF-8" type="text/javascript">
+    <!--
+    //Script para abas que utilizam ajax
+    criarAbas(barraAbas_1550888688763, 'pagina');
+    //-->
+</script>
+<div id="noticias" class="pagina" style="visibility: hidden; display: none;"></div>
+<div id="agenda" class="pagina" style="visibility: visible; display: block;">
+    <div>
+        <div id="paginaFiltrar">
+            <div id="titulo_paginaFiltrar"><br>
+                <table width="100%" class="titulosecao_table">
+                    <tbody>
+                    <tr>
+                        <td class="titulosecao_td"><a class="ocultar"
+                                                      onclick="shoh('conteudo_paginaFiltrar');">&nbsp;<img
+                                src="/unico/recursos/imagens/d.gif" name="img_conteudo_paginaFiltrar"
+                                class="imagemOcultar">&nbsp;Agenda</a></td>
+                    </tr>
+                    </tbody>
+                </table>
+            </div>
+            <div id="conteudo_paginaFiltrar">
+                <form method="post" id="form_paginaFiltrar">
+                    <table>
+                        <tbody>
+                        <tr style="padding-bottom: 5px;">
+                            <td colspan="1" nowrap="">
+                                <div style="display:inline;">
+                                    <table>
+                                        <tbody>
+                                        <tr style="padding-bottom: 5px;">
+                                            <td valign="center" nowrap="" style="padding-bottom: 5px;">Etiqueta</td>
+                                            <td colspan="3" nowrap="">
+                                                <input type="text" name="etiqueta" size="40" class="caixa"></td>
+                                        </tr>
+                                        <tr style="padding-bottom: 5px;">
+                                            <td valign="center" nowrap="" style="padding-bottom: 5px;">Data Prazo</td>
+                                            <td valign="center" nowrap="" style="padding-bottom: 5px;">
+                                                <input type="text" name="dataInicio" size="10" maxlength="10"
+                                                       onfocus="this.select()"
+                                                       onblur="formatar(this, '##/##/####',false,event);validaData(this,'Data');"
+                                                       class="caixa" onclick="this.select()"
+                                                       onkeyup="formatar(this, '##/##/####',true,event);">
+                                                <img src="/unico/recursos/imagens/calendar.gif" id="dataInicio_calendar"
+                                                     style="vertical-align: bottom; cursor: pointer;"
+                                                     onclick="displayCalendar(document.getElementsByName('dataInicio')[0],'dd/mm/yyyy',this)"
+                                                     onmouseout="this.src='/unico/recursos/imagens/calendar.gif'"
+                                                     onmouseover="this.src='/unico/recursos/imagens/calendar_on.gif'">
+                                            </td>
+                                            <td valign="center" nowrap="" style="padding-bottom: 5px;">a</td>
+                                            <td valign="center" nowrap="" style="padding-bottom: 5px;">
+                                                <input type="text" name="dataFim" size="10" maxlength="10"
+                                                       onfocus="this.select()"
+                                                       onblur="formatar(this, '##/##/####',false,event);validaData(this,'Data');"
+                                                       class="caixa" onclick="this.select()"
+                                                       onkeyup="formatar(this, '##/##/####',true,event);">
+                                                <img src="/unico/recursos/imagens/calendar.gif" id="dataFim_calendar"
+                                                     style="vertical-align: bottom; cursor: pointer;"
+                                                     onclick="displayCalendar(document.getElementsByName('dataFim')[0],'dd/mm/yyyy',this)"
+                                                     onmouseout="this.src='/unico/recursos/imagens/calendar.gif'"
+                                                     onmouseover="this.src='/unico/recursos/imagens/calendar_on.gif'">
+                                            </td>
+                                        </tr>
+                                        <tr style="padding-bottom: 5px;">
+                                            <td valign="center" nowrap="" style="padding-bottom: 5px;">Cadastrador</td>
+                                            <td colspan="3" nowrap="">
+                                                <input type="text" name="usuarioCadastradorNome" size="40"
+                                                       class="caixa"></td>
+                                        </tr>
+                                        <tr style="padding-bottom: 5px;">
+                                            <td colspan="2" nowrap=""><br></td>
+                                            <td valign="center" nowrap="" style="padding-bottom: 5px;">
+                                            </td>
+                                            <td>
+                                                <button name="botao_ajax_tabelaNotificacao" type="button"
+                                                        title="Filtrar"
+                                                        onclick="sendFormAjax('/unico/agenda/filtrar.action?ajaxParam=filtrar', 'tabelaNotificacao', this.form, this,true,null,false,false);">
+                                                    Filtrar
+                                                </button>
+                                            </td>
+                                        </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </td>
+                        </tr>
+                        </tbody>
+                    </table>
+                    <table>
+                        <tbody>
+                        <tr style="padding-bottom: 5px;">
+                            <td colspan="2" nowrap="">
+                                <div id="tabelaNotificacao">
+                                    <table>
+                                        <tbody>
+                                        <tr style="padding-bottom: 5px;">
+                                            <td colspan="1" nowrap="">
+                                            </td>
+                                            <td style="padding: 5px; vertical-align: top;">
+                                                <div>
+                                                    <fieldset>
+                                                        <table class="tabela">
+                                                            <thead>
+                                                            <tr>
+                                                                <th colspan="1" class="titulosecao_table2"><a
+                                                                        class="ocultar" onclick="shoh('tabela_Eve');">&nbsp;<img
+                                                                        src="/unico/recursos/imagens/d.gif"
+                                                                        name="img_tabela_Eve"
+                                                                        style="padding-right: 5px;" border="0" width="9"
+                                                                        height="9">&nbsp;Eventos</a></th>
+                                                            </tr>
+                                                            </thead>
+                                                        </table>
+                                                        <table id="tabela_Eve" class="tabela"
+                                                        "="">
+                                        <tbody>
+                                        <tr>
+                                            <th bgcolor="#c2c2c2" style="padding-right: 80px; padding-left: 30px;">
+                                                Senhores usuários, para consultar os eventos acesse o menu do único.
+                                                Caminho para o evento: Acesse o menu Apontamentos e Eventos
+                                            </th>
+                                        </tr>
+                                        </tbody>
+                                        <tfoot></tfoot>
+                                    </table>
+                                    </fieldset></div>
+                            </td>
+                            <td colspan="1" nowrap="">
+                            </td>
+                            <td style="padding: 5px; vertical-align: top;">
+                                <div>
+                                    <fieldset>
+                                        <table class="tabela">
+                                            <thead>
+                                            <tr>
+                                                <th colspan="1" class="titulosecao_table2"><a class="ocultar"
+                                                                                              onclick="shoh('tabela_Apo');">&nbsp;<img
+                                                        src="/unico/recursos/imagens/d.gif" name="img_tabela_Apo"
+                                                        style="padding-right: 5px;" border="0" width="9" height="9">&nbsp;Apontamentos</a>
+                                                </th>
+                                            </tr>
+                                            </thead>
+                                        </table>
+                                        <table id="tabela_Apo" class="tabela"
+                                        "="">
+                        <tbody>
+                        <tr>
+                            <th bgcolor="#c2c2c2" style="padding-right: 80px; padding-left: 30px;">Senhores usuários,
+                                para consultar os apontamentos acesse o menu do único. Caminho para o evento: Acesse o
+                                menu Apontamentos
+                            </th>
+                        </tr>
+                        </tbody>
+                        <tfoot></tfoot>
+                    </table>
+                    </fieldset>
+            </div>
+            </td></tr>
+            <tr style="padding-bottom: 5px;">
+                <td colspan="1" nowrap="">
+                </td>
+                <td style="padding: 5px; vertical-align: top;">
+                    <div>
+                        <fieldset>
+                            <table class="tabela">
+                                <thead>
+                                <tr>
+                                    <th colspan="1" class="titulosecao_table2"><a class="ocultar"
+                                                                                  onclick="shoh('tabela_Not');">&nbsp;<img
+                                            src="/unico/recursos/imagens/d.gif" name="img_tabela_Not"
+                                            style="padding-right: 5px;" border="0" width="9" height="9">&nbsp;Notas</a>
+                                    </th>
+                                </tr>
+                                </thead>
+                            </table>
+                            <table id="tabela_Not" class="tabela"
+                            "="">
+                            <tbody>
+                            <tr>
+                                <th bgcolor="#c2c2c2" style="padding-right: 80px; padding-left: 30px;">Senhores
+                                    usuários, para consultar as notas acesse o menu do único. Caminho para o evento:
+                                    Acesse o menu Apontamentos e Notas
+                                </th>
+                            </tr>
+                            </tbody>
+                            <tfoot></tfoot>
+                            </table></fieldset>
+                    </div>
+                </td>
+                <td colspan="1" nowrap="">
+                </td>
+                <td style="padding: 5px; vertical-align: top;">
+                    <div>
+                        <fieldset>
+                            <table class="tabela">
+                                <thead>
+                                <tr>
+                                    <th colspan="1" class="titulosecao_table2"><a class="ocultar"
+                                                                                  onclick="shoh('tabela_Aco');">&nbsp;<img
+                                            src="/unico/recursos/imagens/d.gif" name="img_tabela_Aco"
+                                            style="padding-right: 5px;" border="0" width="9" height="9">&nbsp;Acompanhamento
+                                        Judicial</a></th>
+                                </tr>
+                                </thead>
+                            </table>
+                            <table id="tabela_Aco" class="tabela"
+                            "="">
+                            <tbody>
+                            <tr>
+                                <th bgcolor="#c2c2c2" style="padding-right: 80px; padding-left: 30px;">Senhores
+                                    usuários, para consultar os processos judiciários acesse o menu do único.
+                                </th>
+                            </tr>
+                            </tbody>
+                            <tfoot></tfoot>
+                            </table></fieldset>
+                    </div>
+                </td>
+            </tr>
+            <tr style="padding-bottom: 5px;">
+                <td colspan="1" nowrap="">
+                </td>
+                <td style="padding: 5px; vertical-align: top;">
+                    <div>
+                        <fieldset>
+                            <table class="tabela">
+                                <thead>
+                                <tr>
+                                    <th colspan="2" class="titulosecao_table2"><a class="ocultar"
+                                                                                  onclick="shoh('tabela_Doc');">&nbsp;<img
+                                            src="/unico/recursos/imagens/d.gif" name="img_tabela_Doc"
+                                            style="padding-right: 5px;" border="0" width="9" height="9">&nbsp;Documentos
+                                        com Prazo</a></th>
+                                </tr>
+                                </thead>
+                            </table>
+                            <table id="tabela_Doc" class="tabela"
+                            "="">
+                            <tbody>
+                            <tr>
+                                <td colspan="2" align="center">
+                                    <button name="botao_operacao" accesskey="F" title=" <ALT + SHIFT + F>"
+                                            onclick="var botao = this; validarBotaoAjax(this,false,'Tem certeza que deseja executar esta operação ?',true,function(){  abrirNovaJanela(botao.form,'/unico/imprimirAgenda/imprimirDocumento.action','/unico/imprimirAgenda/imprimirDocumento.action'); }); return false;">
+                                        Imprimir
+                                    </button>
+                                </td>
+                            </tr>
+                            <tr>
+                                <th bgcolor="#c2c2c2" style="padding-right: 80px; padding-left: 30px;">
+                                    Etiqueta/Descrição
+                                </th>
+                                <th bgcolor="#c2c2c2" style="padding-right: 80px; padding-left: 30px;">Data
+                                    Prazo/Limite
+                                </th>
+                            </tr>
+                            <tr class="linhaPar">
+                                <td>
+                                    <a href="/unico/documentoAdministrativo/recuperar.action?&amp;documentoAdministrativo=64691546">PRM-PSS-MG-00002078/2015
+                                        - OFÍCIO 317/2015</a></td>
+                                <td>11/06/2015</td>
+                            </tr>
+                            <tr class="linhaImpar">
+                                <td>
+                                    <a href="/unico/documentoAdministrativo/recuperar.action?&amp;documentoAdministrativo=64690647">PRM-PSS-MG-00002075/2015
+                                        - OFÍCIO 314/2015</a></td>
+                                <td>11/06/2015</td>
+                            </tr>
+                            <tr class="linhaPar">
+                                <td>
+                                    <a href="/unico/documentoAdministrativo/recuperar.action?&amp;documentoAdministrativo=74335753">PRM-PSS-MG-00005106/2016
+                                        - OFÍCIO 702/2016</a></td>
+                                <td>06/11/2016</td>
+                            </tr>
+                            <tr class="linhaImpar">
+                                <td>
+                                    <a href="/unico/documentoAdministrativo/recuperar.action?&amp;documentoAdministrativo=83751202">PRM-PSS-MG-00000782/2018
+                                        - <font color="red"><b>Eletrônico</b></font> - OFÍCIO 105/2018&nbsp;-&nbsp;<b>Assinado
+                                            Digitalmente</b></a></td>
+                                <td>28/03/2018</td>
+                            </tr>
+                            <tr class="linhaPar">
+                                <td>
+                                    <a href="/unico/documentoAdministrativo/recuperar.action?&amp;documentoAdministrativo=90596081">PRM-PSS-MG-00006671/2018
+                                        - <font color="red"><b>Eletrônico</b></font> - OFÍCIO 794/2018&nbsp;-&nbsp;<b>Assinado
+                                            Digitalmente</b></a></td>
+                                <td>10/01/2019</td>
+                            </tr>
+                            <tr class="linhaImpar">
+                                <td>
+                                    <a href="/unico/documentoAdministrativo/recuperar.action?&amp;documentoAdministrativo=90468097">PRM-PSS-MG-00006584/2018
+                                        - <font color="red"><b>Eletrônico</b></font> - OFÍCIO 781/2018-RFB-VGA&nbsp;-&nbsp;<b>Assinado
+                                            Digitalmente</b></a></td>
+                                <td>11/01/2019</td>
+                            </tr>
+                            <tr class="linhaPar">
+                                <td>
+                                    <a href="/unico/documentoAdministrativo/recuperar.action?&amp;documentoAdministrativo=90610335">PRM-PSS-MG-00006705/2018
+                                        - <font color="red"><b>Eletrônico</b></font> - OFÍCIO 799/2018&nbsp;-&nbsp;<b>Assinado
+                                            Digitalmente</b></a></td>
+                                <td>11/01/2019</td>
+                            </tr>
+                            <tr class="linhaImpar">
+                                <td>
+                                    <a href="/unico/documentoAdministrativo/recuperar.action?&amp;documentoAdministrativo=90609228">PRM-PSS-MG-00006702/2018
+                                        - <font color="red"><b>Eletrônico</b></font> - OFÍCIO 798/2018&nbsp;-&nbsp;<b>Assinado
+                                            Digitalmente</b></a></td>
+                                <td>11/01/2019</td>
+                            </tr>
+                            <tr class="linhaPar">
+                                <td>
+                                    <a href="/unico/documentoAdministrativo/recuperar.action?&amp;documentoAdministrativo=90533561">PRM-PSS-MG-00006625/2018
+                                        - <font color="red"><b>Eletrônico</b></font> - OFÍCIO 788/2018&nbsp;-&nbsp;<b>Assinado
+                                            Digitalmente</b></a></td>
+                                <td>11/01/2019</td>
+                            </tr>
+                            <tr class="linhaImpar">
+                                <td>
+                                    <a href="/unico/documentoAdministrativo/recuperar.action?&amp;documentoAdministrativo=91246791">PRM-PSS-MG-00007213/2018
+                                        - <font color="red"><b>Eletrônico</b></font> - OFÍCIO 865/2018&nbsp;-&nbsp;<b>Assinado
+                                            Digitalmente</b></a></td>
+                                <td>17/01/2019</td>
+                            </tr>
+                            <tr class="linhaPar">
+                                <td>
+                                    <a href="/unico/documentoAdministrativo/recuperar.action?&amp;documentoAdministrativo=90718113">PRM-PSS-MG-00006806/2018
+                                        - <font color="red"><b>Eletrônico</b></font> - OFÍCIO 809/2018-PREF. GUAXUPÉ&nbsp;-&nbsp;<b>Assinado
+                                            Digitalmente</b></a></td>
+                                <td>19/01/2019</td>
+                            </tr>
+                            <tr class="linhaImpar">
+                                <td>
+                                    <a href="/unico/documentoAdministrativo/recuperar.action?&amp;documentoAdministrativo=90716306">PRM-PSS-MG-00006800/2018
+                                        - <font color="red"><b>Eletrônico</b></font> - OFÍCIO 806/2018&nbsp;-&nbsp;<b>Assinado
+                                            Digitalmente</b></a></td>
+                                <td>19/01/2019</td>
+                            </tr>
+                            <tr class="linhaPar">
+                                <td>
+                                    <a href="/unico/documentoAdministrativo/recuperar.action?&amp;documentoAdministrativo=90889947">PRM-PSS-MG-00006964/2018
+                                        - <font color="red"><b>Eletrônico</b></font> - OFÍCIO 830/2018&nbsp;-&nbsp;<b>Assinado
+                                            Digitalmente</b></a></td>
+                                <td>19/01/2019</td>
+                            </tr>
+                            <tr class="linhaImpar">
+                                <td>
+                                    <a href="/unico/documentoAdministrativo/recuperar.action?&amp;documentoAdministrativo=90958920">PRM-PSS-MG-00007030/2018
+                                        - <font color="red"><b>Eletrônico</b></font> - OFÍCIO 835/2018-PREF. S. JOSÉ
+                                        BARRA&nbsp;-&nbsp;<b>Assinado Digitalmente</b></a></td>
+                                <td>21/01/2019</td>
+                            </tr>
+                            <tr class="linhaPar">
+                                <td>
+                                    <a href="/unico/documentoAdministrativo/recuperar.action?&amp;documentoAdministrativo=90990365">PRM-PSS-MG-00007081/2018
+                                        - <font color="red"><b>Eletrônico</b></font> - OFÍCIO 844/2018-PREF. ILICÍNEA&nbsp;-&nbsp;<b>Assinado
+                                            Digitalmente</b></a></td>
+                                <td>24/01/2019</td>
+                            </tr>
+                            <tr class="linhaImpar">
+                                <td>
+                                    <a href="/unico/documentoAdministrativo/recuperar.action?&amp;documentoAdministrativo=90990409">PRM-PSS-MG-00007083/2018
+                                        - <font color="red"><b>Eletrônico</b></font> - OFÍCIO 846/2018-COPASA&nbsp;-&nbsp;<b>Assinado
+                                            Digitalmente</b></a></td>
+                                <td>24/01/2019</td>
+                            </tr>
+                            <tr class="linhaPar">
+                                <td>
+                                    <a href="/unico/documentoAdministrativo/recuperar.action?&amp;documentoAdministrativo=90950013">PRM-PSS-MG-00007016/2018
+                                        - <font color="red"><b>Eletrônico</b></font> - OFÍCIO 831/2018-Pref. Conceição
+                                        Aparecida&nbsp;-&nbsp;<b>Assinado Digitalmente</b></a></td>
+                                <td>24/01/2019</td>
+                            </tr>
+                            <tr class="linhaImpar">
+                                <td>
+                                    <a href="/unico/documentoAdministrativo/recuperar.action?&amp;documentoAdministrativo=90990404">PRM-PSS-MG-00007082/2018
+                                        - <font color="red"><b>Eletrônico</b></font> - OFÍCIO 845/2018-PREF. NOVA
+                                        RESENDE&nbsp;-&nbsp;<b>Assinado Digitalmente</b></a></td>
+                                <td>24/01/2019</td>
+                            </tr>
+                            <tr class="linhaPar">
+                                <td>
+                                    <a href="/unico/documentoAdministrativo/recuperar.action?&amp;documentoAdministrativo=90953589">PRM-PSS-MG-00007021/2018
+                                        - <font color="red"><b>Eletrônico</b></font> - OFÍCIO 834/2018-Pref. Guapé&nbsp;-&nbsp;<b>Assinado
+                                            Digitalmente</b></a></td>
+                                <td>24/01/2019</td>
+                            </tr>
+                            <tr class="linhaImpar">
+                                <td>
+                                    <a href="/unico/documentoAdministrativo/recuperar.action?&amp;documentoAdministrativo=91126156">PRM-PSS-MG-00007157/2018
+                                        - <font color="red"><b>Eletrônico</b></font> - OFÍCIO 855/2018&nbsp;-&nbsp;<b>Assinado
+                                            Digitalmente</b></a></td>
+                                <td>28/01/2019</td>
+                            </tr>
+                            <tr class="linhaPar">
+                                <td>
+                                    <a href="/unico/documentoAdministrativo/recuperar.action?&amp;documentoAdministrativo=91343356">PRM-PSS-MG-00000036/2019
+                                        - <font color="red"><b>Eletrônico</b></font> - OFÍCIO 9/2019-Pref. S.S. Paraíso&nbsp;-&nbsp;<b>Assinado
+                                            Digitalmente</b></a></td>
+                                <td>21/02/2019</td>
+                            </tr>
+                            <tr class="linhaImpar">
+                                <td>
+                                    <a href="/unico/documentoAdministrativo/recuperar.action?&amp;documentoAdministrativo=91343500">PRM-PSS-MG-00000039/2019
+                                        - <font color="red"><b>Eletrônico</b></font> - OFÍCIO 11/2019-INCRA/MG&nbsp;-&nbsp;<b>Assinado
+                                            Digitalmente</b></a></td>
+                                <td>21/02/2019</td>
+                            </tr>
+                            <tr class="linhaPar">
+                                <td>
+                                    <a href="/unico/documentoAdministrativo/recuperar.action?&amp;documentoAdministrativo=91343347">PRM-PSS-MG-00000035/2019
+                                        - <font color="red"><b>Eletrônico</b></font> - OFÍCIO 8/2019-SES/MG&nbsp;-&nbsp;<b>Assinado
+                                            Digitalmente</b></a></td>
+                                <td>21/02/2019</td>
+                            </tr>
+                            <tr class="linhaImpar">
+                                <td>
+                                    <a href="/unico/documentoAdministrativo/recuperar.action?&amp;documentoAdministrativo=91340885">PRM-PSS-MG-00000026/2019
+                                        - <font color="red"><b>Eletrônico</b></font> - OFÍCIO 7/2019-SMS-Pref. Passos&nbsp;-&nbsp;<b>Assinado
+                                            Digitalmente</b></a></td>
+                                <td>21/02/2019</td>
+                            </tr>
+                            <tr class="linhaPar">
+                                <td>
+                                    <a href="/unico/documentoAdministrativo/recuperar.action?&amp;documentoAdministrativo=91340729">PRM-PSS-MG-00000025/2019
+                                        - <font color="red"><b>Eletrônico</b></font> - OFÍCIO 6/2019-SES/MG&nbsp;-&nbsp;<b>Assinado
+                                            Digitalmente</b></a></td>
+                                <td>21/02/2019</td>
+                            </tr>
+                            <tr class="linhaImpar">
+                                <td>
+                                    <a href="/unico/documentoAdministrativo/recuperar.action?&amp;documentoAdministrativo=91333706">PRM-PSS-MG-00000001/2019
+                                        - <font color="red"><b>Eletrônico</b></font> - OFÍCIO 1/2019-APS-S.S. Paraíso&nbsp;-&nbsp;<b>Assinado
+                                            Digitalmente</b></a></td>
+                                <td>21/02/2019</td>
+                            </tr>
+                            <tr class="linhaPar">
+                                <td>
+                                    <a href="/unico/documentoAdministrativo/recuperar.action?&amp;documentoAdministrativo=91343482">PRM-PSS-MG-00000038/2019
+                                        - <font color="red"><b>Eletrônico</b></font> - OFÍCIO 10/2019-PM-Ambiental&nbsp;-&nbsp;<b>Assinado
+                                            Digitalmente</b></a></td>
+                                <td>22/02/2019</td>
+                            </tr>
+                            <tr class="linhaImpar">
+                                <td>
+                                    <a href="/unico/documentoAdministrativo/recuperar.action?&amp;documentoAdministrativo=92450279">PRM-PSS-MG-00000997/2019
+                                        - <font color="red"><b>Eletrônico</b></font> - E-MAIL /2019&nbsp;-&nbsp;<b>Assinado
+                                            Digitalmente</b></a></td>
+                                <td>25/02/2019</td>
+                            </tr>
+                            <tr class="linhaPar">
+                                <td>
+                                    <a href="/unico/documentoAdministrativo/recuperar.action?&amp;documentoAdministrativo=92452953">PRM-PSS-MG-00000999/2019
+                                        - <font color="red"><b>Eletrônico</b></font> - E-MAIL /2019&nbsp;-&nbsp;<b>Assinado
+                                            Digitalmente</b></a></td>
+                                <td>25/02/2019</td>
+                            </tr>
+                            <tr class="linhaImpar">
+                                <td>
+                                    <a href="/unico/documentoAdministrativo/recuperar.action?&amp;documentoAdministrativo=92470838">PRM-PSS-MG-00001031/2019
+                                        - <font color="red"><b>Eletrônico</b></font> - E-MAIL /2019&nbsp;-&nbsp;<b>Assinado
+                                            Digitalmente</b></a></td>
+                                <td>25/02/2019</td>
+                            </tr>
+                            <tr class="linhaPar">
+                                <td>
+                                    <a href="/unico/documentoAdministrativo/recuperar.action?&amp;documentoAdministrativo=92469323">PRM-PSS-MG-00001027/2019
+                                        - <font color="red"><b>Eletrônico</b></font> - E-MAIL /2019&nbsp;-&nbsp;<b>Assinado
+                                            Digitalmente</b></a></td>
+                                <td>25/02/2019</td>
+                            </tr>
+                            <tr class="linhaImpar">
+                                <td>
+                                    <a href="/unico/documentoAdministrativo/recuperar.action?&amp;documentoAdministrativo=92446957">PRM-PSS-MG-00000995/2019
+                                        - <font color="red"><b>Eletrônico</b></font> - E-MAIL /2019&nbsp;-&nbsp;<b>Assinado
+                                            Digitalmente</b></a></td>
+                                <td>25/02/2019</td>
+                            </tr>
+                            <tr class="linhaPar">
+                                <td>
+                                    <a href="/unico/documentoAdministrativo/recuperar.action?&amp;documentoAdministrativo=92452315">PRM-PSS-MG-00000998/2019
+                                        - <font color="red"><b>Eletrônico</b></font> - E-MAIL /2019&nbsp;-&nbsp;<b>Assinado
+                                            Digitalmente</b></a></td>
+                                <td>25/02/2019</td>
+                            </tr>
+                            <tr class="linhaImpar">
+                                <td>
+                                    <a href="/unico/documentoAdministrativo/recuperar.action?&amp;documentoAdministrativo=91878069">PRM-PSS-MG-00000481/2019
+                                        - <font color="red"><b>Eletrônico</b></font> - OFÍCIO 76/2019&nbsp;-&nbsp;<b>Assinado
+                                            Digitalmente</b></a></td>
+                                <td>03/03/2019</td>
+                            </tr>
+                            <tr class="linhaPar">
+                                <td>
+                                    <a href="/unico/documentoAdministrativo/recuperar.action?&amp;documentoAdministrativo=92288052">PRM-PSS-MG-00000879/2019
+                                        - <font color="red"><b>Eletrônico</b></font> - OFÍCIO 149/2019-COMUNICA
+                                        ARQUIVAMENTO&nbsp;-&nbsp;<b>Assinado Digitalmente</b></a></td>
+                                <td>04/03/2019</td>
+                            </tr>
+                            <tr class="linhaImpar">
+                                <td>
+                                    <a href="/unico/documentoAdministrativo/recuperar.action?&amp;documentoAdministrativo=91472503">PRM-PSS-MG-00000155/2019
+                                        - <font color="red"><b>Eletrônico</b></font> - OFÍCIO 26/2019&nbsp;-&nbsp;<b>Assinado
+                                            Digitalmente</b></a></td>
+                                <td>23/03/2019</td>
+                            </tr>
+                            <tr class="linhaPar">
+                                <td>
+                                    <a href="/unico/documentoAdministrativo/recuperar.action?&amp;documentoAdministrativo=91769082">PRM-PSS-MG-00000384/2019
+                                        - <font color="red"><b>Eletrônico</b></font> - OFÍCIO 59/2019&nbsp;-&nbsp;<b>Assinado
+                                            Digitalmente</b></a></td>
+                                <td>23/03/2019</td>
+                            </tr>
+                            <tr class="linhaImpar">
+                                <td>
+                                    <a href="/unico/documentoAdministrativo/recuperar.action?&amp;documentoAdministrativo=91753453">PRM-PSS-MG-00000363/2019
+                                        - <font color="red"><b>Eletrônico</b></font> - OFÍCIO 56/2019&nbsp;-&nbsp;<b>Assinado
+                                            Digitalmente</b></a></td>
+                                <td>24/03/2019</td>
+                            </tr>
+                            <tr class="linhaPar">
+                                <td>
+                                    <a href="/unico/documentoAdministrativo/recuperar.action?&amp;documentoAdministrativo=90601019">PRM-PSS-MG-00006685/2018
+                                        - <font color="red"><b>Eletrônico</b></font> - OFÍCIO 796/2018-DPF/DVS&nbsp;-&nbsp;<b>Assinado
+                                            Digitalmente</b></a></td>
+                                <td>26/03/2019</td>
+                            </tr>
+                            <tr class="linhaImpar">
+                                <td>
+                                    <a href="/unico/documentoAdministrativo/recuperar.action?&amp;documentoAdministrativo=90655099">PRM-PSS-MG-00006748/2018
+                                        - <font color="red"><b>Eletrônico</b></font> - OFÍCIO 802/2018&nbsp;-&nbsp;<b>Assinado
+                                            Digitalmente</b></a></td>
+                                <td>28/03/2019</td>
+                            </tr>
+                            <tr class="linhaPar">
+                                <td>
+                                    <a href="/unico/documentoAdministrativo/recuperar.action?&amp;documentoAdministrativo=92100230">PRM-PSS-MG-00000661/2019
+                                        - <font color="red"><b>Eletrônico</b></font> - OFÍCIO 120/2019&nbsp;-&nbsp;<b>Assinado
+                                            Digitalmente</b></a></td>
+                                <td>01/04/2019</td>
+                            </tr>
+                            <tr class="linhaImpar">
+                                <td>
+                                    <a href="/unico/documentoAdministrativo/recuperar.action?&amp;documentoAdministrativo=92100227">PRM-PSS-MG-00000660/2019
+                                        - <font color="red"><b>Eletrônico</b></font> - OFÍCIO 119/2019&nbsp;-&nbsp;<b>Assinado
+                                            Digitalmente</b></a></td>
+                                <td>01/04/2019</td>
+                            </tr>
+                            <tr class="linhaPar">
+                                <td>
+                                    <a href="/unico/documentoAdministrativo/recuperar.action?&amp;documentoAdministrativo=91992960">PRM-PSS-MG-00000556/2019
+                                        - <font color="red"><b>Eletrônico</b></font> - OFÍCIO 85/2019&nbsp;-&nbsp;<b>Assinado
+                                            Digitalmente</b></a></td>
+                                <td>04/04/2019</td>
+                            </tr>
+                            <tr class="linhaImpar">
+                                <td>
+                                    <a href="/unico/documentoAdministrativo/recuperar.action?&amp;documentoAdministrativo=92157449">PRM-PSS-MG-00000715/2019
+                                        - <font color="red"><b>Eletrônico</b></font> - OFÍCIO 126/2019&nbsp;-&nbsp;<b>Assinado
+                                            Digitalmente</b></a></td>
+                                <td>04/04/2019</td>
+                            </tr>
+                            <tr class="linhaPar">
+                                <td>
+                                    <a href="/unico/documentoAdministrativo/recuperar.action?&amp;documentoAdministrativo=92377408">PRM-PSS-MG-00000920/2019
+                                        - <font color="red"><b>Eletrônico</b></font> - OFÍCIO 158/2019&nbsp;-&nbsp;<b>Assinado
+                                            Digitalmente</b></a></td>
+                                <td>06/04/2019</td>
+                            </tr>
+                            <tr class="linhaImpar">
+                                <td>
+                                    <a href="/unico/documentoAdministrativo/recuperar.action?&amp;documentoAdministrativo=92461872">PRM-PSS-MG-00001014/2019
+                                        - <font color="red"><b>Eletrônico</b></font> - OFÍCIO 169/2019&nbsp;-&nbsp;<b>Assinado
+                                            Digitalmente</b></a></td>
+                                <td>08/04/2019</td>
+                            </tr>
+                            </tbody>
+                            <tfoot></tfoot>
+                            </table></fieldset>
+                    </div>
+                </td>
+                <td colspan="1" nowrap="">
+                </td>
+                <td style="padding: 5px; vertical-align: top;">
+                    <div>
+                        <fieldset>
+                            <table class="tabela">
+                                <thead>
+                                <tr>
+                                    <th colspan="2" class="titulosecao_table2"><a class="ocultar"
+                                                                                  onclick="shoh('tabela_Aut');">&nbsp;<img
+                                            src="/unico/recursos/imagens/d.gif" name="img_tabela_Aut"
+                                            style="padding-right: 5px;" border="0" width="9" height="9">&nbsp;Autos
+                                        Administrativos Com Prazo</a></th>
+                                </tr>
+                                </thead>
+                            </table>
+                            <table id="tabela_Aut" class="tabela"
+                            "="">
+                            <tbody>
+                            <tr>
+                                <td colspan="2" align="center">
+                                    <button name="botao_operacao" accesskey="F" title=" <ALT + SHIFT + F>"
+                                            onclick="var botao = this; validarBotaoAjax(this,false,'Tem certeza que deseja executar esta operação ?',true,function(){  abrirNovaJanela(botao.form,'/unico/imprimirAgenda/imprimirAuto.action','/unico/imprimirAgenda/imprimirAuto.action'); }); return false;">
+                                        Imprimir
+                                    </button>
+                                </td>
+                            </tr>
+                            <tr>
+                                <th bgcolor="#c2c2c2" style="padding-right: 80px; padding-left: 30px;">
+                                    Etiqueta/Descrição
+                                </th>
+                                <th bgcolor="#c2c2c2" style="padding-right: 80px; padding-left: 30px;">Data
+                                    Prazo/Limite
+                                </th>
+                            </tr>
+                            <tr class="linhaPar">
+                                <td>
+                                    <a href="/unico/autoAdministrativo/recuperar.action?&amp;autoAdministrativo=87070438">Notícia
+                                        de Fato - NF - 1.22.004.000116/2018-23 - CRIMINAL<font
+                                                color="red"><b>Eletrônico</b></font> </a></td>
+                                <td>04/08/2018</td>
+                            </tr>
+                            <tr class="linhaImpar">
+                                <td>
+                                    <a href="/unico/autoAdministrativo/recuperar.action?&amp;autoAdministrativo=68376748">1.22.004.000326/2015-79
+                                        Finalizar sobrestamento</a></td>
+                                <td>2018-01-20 02:00:00.0</td>
+                            </tr>
+                            </tbody>
+                            <tfoot></tfoot>
+                            </table></fieldset>
+                    </div>
+                </td>
+            </tr>
+            <tr style="padding-bottom: 5px;">
+                <td colspan="2" nowrap=""><br></td>
+            </tr>
+            </tbody></table></div>
+        </td></tr></tbody></table>
+        <input type="hidden" name="data"></form></div>
+</div>
+<!--inicioScriptMensagens-->
+
+
+<!--fimScriptMensagens--><!--inicioControles-->
+<!--fimControles--></div></div>
+<div id="atualizacoes" class="pagina" style="visibility: hidden; display: none;"></div>
+
+<div id="paginaAtena" class="pagina" style="visibility: hidden; display: none;">
+    <form method="POST" action="/unico/gerenciador/consultar.action">
+        <table style="width:100%;vertical-align: bottom;align:rigth;">
+            <tbody>
+            <tr>
+                <td style="font-size:18px; padding: 5px 0 5px 5px;"></td>
+            </tr>
+            </tbody>
+        </table>
+        <table width="100%" class="titulosecao_table">
+            <tbody>
+            <tr>
+                <td><a class="ocultar" style="cursor:default;">&nbsp;<img src="/unico/recursos/imagens/d.gif"
+                                                                          name="img_divSecaoTotaisSemanais"
+                                                                          style="padding-right: 5px;" border="0"
+                                                                          width="9" height="9">&nbsp;Expedientes - <font
+                        color="red"> Existem expedientes eletrônicos que ainda não foram recebidos</font> </a></td>
+            </tr>
+            </tbody>
+        </table>
+
+        <div id="div_componentePaginacao">
+        </div>
+
+
+        <table style="width: 100%; padding: 0;">
+            <tbody>
+            <tr>
+                <td style="vertical-align:top; padding: 0; margin: 0;">
+                    <div id="arvore_documentos">
+                        <table>
+                            <tbody>
+                            <tr>
+                                <td style="border: 1px solid #aaa; padding: 5px; white-space: nowrap; margin: 0px;">
+                                    <div id="pasta_entrada"><a class="semEstilo" href="#"
+                                                               title="Documentos pendentes de recebimento"
+                                                               onclick="ocultarGerenciador();sendFormAjax('/unico/gerenciador/atualizarQuantidadesDaPastaAjax.action?pasta=entrada&amp;ajaxParam=itensDaPasta', 'pasta_entrada', getElemento('filtrar').form, getElemento('filtrar'),true,null,true,false);"
+                                                               style="text-decoration:none;"><img
+                                            style="border: 0; vertical-align: middle;" id="img_entrada"
+                                            src="/unico/recursos/imagens/folder.gif"
+                                            onclick="ocultarGerenciador();sendFormAjax('/unico/gerenciador/atualizarQuantidadesDaPastaAjax.action?pasta=entrada&amp;ajaxParam=itensDaPasta', 'pasta_entrada', getElemento('filtrar').form, getElemento('filtrar'),true,null,true,false);"
+                                            title="Documentos pendentes de recebimento">A Receber</a><br></div>
+                                    <div id="pasta_noSetor"><a class="semEstilo" href="#"
+                                                               title="Documentos sob custódia do setor"
+                                                               onclick="ocultarGerenciador();sendFormAjax('/unico/gerenciador/atualizarQuantidadesDaPastaAjax.action?pasta=noSetor&amp;ajaxParam=itensDaPasta', 'pasta_noSetor', getElemento('filtrar').form, getElemento('filtrar'),true,null,true,false);"
+                                                               style="text-decoration:none;"><img
+                                            style="border: 0; vertical-align: middle;" id="img_noSetor"
+                                            src="/unico/recursos/imagens/folder.gif"
+                                            onclick="ocultarGerenciador();sendFormAjax('/unico/gerenciador/atualizarQuantidadesDaPastaAjax.action?pasta=noSetor&amp;ajaxParam=itensDaPasta', 'pasta_noSetor', getElemento('filtrar').form, getElemento('filtrar'),true,null,true,false);"
+                                            title="Documentos sob custódia do setor">No Setor</a><br></div>
+                                    <div id="pasta_enviados"><a class="semEstilo" href="#"
+                                                                title="Documentos enviados e não recebidos no âmbito do MPF"
+                                                                onclick="ocultarGerenciador();sendFormAjax('/unico/gerenciador/atualizarQuantidadesDaPastaAjax.action?pasta=enviados&amp;ajaxParam=itensDaPasta', 'pasta_enviados', getElemento('filtrar').form, getElemento('filtrar'),true,null,true,false);"
+                                                                style="text-decoration:none;"><img
+                                            style="border: 0; vertical-align: middle;" id="img_enviados"
+                                            src="/unico/recursos/imagens/folder.gif"
+                                            onclick="ocultarGerenciador();sendFormAjax('/unico/gerenciador/atualizarQuantidadesDaPastaAjax.action?pasta=enviados&amp;ajaxParam=itensDaPasta', 'pasta_enviados', getElemento('filtrar').form, getElemento('filtrar'),true,null,true,false);"
+                                            title="Documentos enviados e não recebidos no âmbito do MPF">Enviados não
+                                        recebidos</a><br></div>
+                                    <div id="pasta_externos"><a class="semEstilo" href="#"
+                                                                title="Documentos enviados para fora do MPF"
+                                                                onclick="ocultarGerenciador();sendFormAjax('/unico/gerenciador/atualizarQuantidadesDaPastaAjax.action?pasta=externos&amp;ajaxParam=itensDaPasta', 'pasta_externos', getElemento('filtrar').form, getElemento('filtrar'),true,null,true,false);"
+                                                                style="text-decoration:none;"><img
+                                            style="border: 0; vertical-align: middle;" id="img_externos"
+                                            src="/unico/recursos/imagens/folder.gif"
+                                            onclick="ocultarGerenciador();sendFormAjax('/unico/gerenciador/atualizarQuantidadesDaPastaAjax.action?pasta=externos&amp;ajaxParam=itensDaPasta', 'pasta_externos', getElemento('filtrar').form, getElemento('filtrar'),true,null,true,false);"
+                                            title="Documentos enviados para fora do MPF">Enviados a Externos nos últimos
+                                        7 dias</a><br></div>
+                                    <div id="pasta_arquivados"><a class="semEstilo" href="#"
+                                                                  title="Documentos arquivados"
+                                                                  onclick="ocultarGerenciador();sendFormAjax('/unico/gerenciador/atualizarQuantidadesDaPastaAjax.action?pasta=arquivados&amp;ajaxParam=itensDaPasta', 'pasta_arquivados', getElemento('filtrar').form, getElemento('filtrar'),true,null,true,false);"
+                                                                  style="text-decoration:none;"><img
+                                            style="border: 0; vertical-align: middle;" id="img_arquivados"
+                                            src="/unico/recursos/imagens/folder.gif"
+                                            onclick="ocultarGerenciador();sendFormAjax('/unico/gerenciador/atualizarQuantidadesDaPastaAjax.action?pasta=arquivados&amp;ajaxParam=itensDaPasta', 'pasta_arquivados', getElemento('filtrar').form, getElemento('filtrar'),true,null,true,false);"
+                                            title="Documentos arquivados">Arquivados nos últimos 6 meses</a><br></div>
+                                    <div id="pasta_originais"><a class="semEstilo" href="#"
+                                                                 title="Originais dos Documentos"
+                                                                 onclick="ocultarGerenciador();sendFormAjax('/unico/gerenciador/atualizarQuantidadesDaPastaAjax.action?pasta=originais&amp;ajaxParam=itensDaPasta', 'pasta_originais', getElemento('filtrar').form, getElemento('filtrar'),true,null,true,false);"
+                                                                 style="text-decoration:none;"><img
+                                            style="border: 0; vertical-align: middle;" id="img_originais"
+                                            src="/unico/recursos/imagens/folder.gif"
+                                            onclick="ocultarGerenciador();sendFormAjax('/unico/gerenciador/atualizarQuantidadesDaPastaAjax.action?pasta=originais&amp;ajaxParam=itensDaPasta', 'pasta_originais', getElemento('filtrar').form, getElemento('filtrar'),true,null,true,false);"
+                                            title="Originais dos Documentos">Originais</a><br></div>
+                                    <div id="pasta_pendencias"><a class="semEstilo" href="#"
+                                                                  title="Documentos Administrativos com pendências"
+                                                                  onclick="ocultarGerenciador();sendFormAjax('/unico/gerenciador/atualizarQuantidadesDaPastaAjax.action?pasta=pendencias&amp;ajaxParam=itensDaPasta', 'pasta_pendencias', getElemento('filtrar').form, getElemento('filtrar'),true,null,true,false);"
+                                                                  style="text-decoration:none;"><img
+                                            style="border: 0; vertical-align: middle;" id="img_pendencias"
+                                            src="/unico/recursos/imagens/folder.gif"
+                                            onclick="ocultarGerenciador();sendFormAjax('/unico/gerenciador/atualizarQuantidadesDaPastaAjax.action?pasta=pendencias&amp;ajaxParam=itensDaPasta', 'pasta_pendencias', getElemento('filtrar').form, getElemento('filtrar'),true,null,true,false);"
+                                            title="Documentos Administrativos com pendências">Pendentes de
+                                        Complementação de Dados</a><br></div>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td style="border: 1px solid #aaa; padding: 5px; white-space: nowrap; margin: 5px;">
+                                    <div>
+                                        <table>
+                                            <tbody>
+                                            <tr style="padding-bottom: 5px;">
+                                                <td valign="center" nowrap="" style="padding-bottom: 5px;">Pesquisar por
+                                                    etiqueta completa&nbsp;&nbsp;&nbsp;&nbsp;
+                                                </td>
+                                                <td colspan="3" nowrap="">
+                                                    <input type="checkBox" name="pesquisaEtiquetaCompleta" checked=""
+                                                           class="caixa"></td>
+                                            </tr>
+                                            <tr style="padding-bottom: 5px;">
+                                                <td valign="center" nowrap="" style="padding-bottom: 5px;">Etiqueta</td>
+                                                <td colspan="3" nowrap="">
+                                                    <input type="text" name="etiqueta" size="27" class="caixa"></td>
+                                            </tr>
+                                            <tr style="padding-bottom: 5px;">
+                                                <td valign="center" nowrap="" style="padding-bottom: 5px;">Data de
+                                                    Cadastro
+                                                </td>
+                                                <td valign="center" nowrap="" style="padding-bottom: 5px;">
+                                                    <input type="text" name="dataInicial" size="10" maxlength="10"
+                                                           onfocus="this.select()"
+                                                           onblur="formatar(this, '##/##/####',false,event);validaData(this,'Data');"
+                                                           class="caixa" onclick="this.select()"
+                                                           onkeyup="formatar(this, '##/##/####',true,event);">
+                                                    <img src="/unico/recursos/imagens/calendar.gif"
+                                                         id="dataInicial_calendar"
+                                                         style="vertical-align: bottom; cursor: pointer;"
+                                                         onclick="displayCalendar(document.getElementsByName('dataInicial')[0],'dd/mm/yyyy',this)"
+                                                         onmouseout="this.src='/unico/recursos/imagens/calendar.gif'"
+                                                         onmouseover="this.src='/unico/recursos/imagens/calendar_on.gif'">
+                                                </td>
+                                                <td valign="center" nowrap="" style="padding-bottom: 5px;">a</td>
+                                                <td valign="center" nowrap="" style="padding-bottom: 5px;">
+                                                    <input type="text" name="dataFinal" size="10" maxlength="10"
+                                                           onfocus="this.select()"
+                                                           onblur="formatar(this, '##/##/####',false,event);validaData(this,'Data');"
+                                                           class="caixa" onclick="this.select()"
+                                                           onkeyup="formatar(this, '##/##/####',true,event);">
+                                                    <img src="/unico/recursos/imagens/calendar.gif"
+                                                         id="dataFinal_calendar"
+                                                         style="vertical-align: bottom; cursor: pointer;"
+                                                         onclick="displayCalendar(document.getElementsByName('dataFinal')[0],'dd/mm/yyyy',this)"
+                                                         onmouseout="this.src='/unico/recursos/imagens/calendar.gif'"
+                                                         onmouseover="this.src='/unico/recursos/imagens/calendar_on.gif'">
+                                                </td>
+                                            </tr>
+                                            <tr style="padding-bottom: 5px;">
+                                                <input type="hidden" name="genero">
+                                                <input type="hidden" name="ordenacao">
+                                                <td valign="center" nowrap="" style="padding-bottom: 5px;">Guia</td>
+                                                <td colspan="3" nowrap="">
+                                                    <input type="text" name="guia" size="27" class="caixa"></td>
+                                            </tr>
+                                            <tr style="padding-bottom: 5px;">
+                                                <td valign="center" nowrap="" style="padding-bottom: 5px;">Cadastrador
+                                                </td>
+                                                <td colspan="3" nowrap="">
+                                                    <input type="text" name="usuarioCadastradorNome" size="27"
+                                                           class="caixa"></td>
+                                            </tr>
+                                            <tr style="padding-bottom: 5px;">
+                                                <td valign="center" nowrap="" style="padding-bottom: 5px;">Designado
+                                                </td>
+                                                <td colspan="3" nowrap="">
+                                                    <input type="text" name="usuarioDesignadoNome" size="27"
+                                                           class="caixa"></td>
+                                            </tr>
+                                            </tbody>
+                                        </table>
+                                    </div>
+                                    <div style="text-align: center; padding-top: 10px;">
+                                        <button name="filtrar" type="submit">&nbsp;&nbsp;Filtrar&nbsp;&nbsp;</button>
+                                    </div>
+                                </td>
+                            </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </td>
+
+
+                <td style="vertical-align: top; width: 99%">
+                    <div class="principal">
+                        <div id="dados">
+                            <div id="div_MensagemEscolhaDeTipoDocumento">
+                                <!--div class="mensagem">
+                                    <table valign="center" width="95%">
+                                        <tbody>
+                                        <tr>
+                                            <td>
+                                                <font class="fonteMensagem">
+                                                Informe um dos tipos
+                                                <img src="/unico/img/a.png" style="margin: 0" title="Auto Administrativo(PA)" />,
+                                                <img src="/unico/img/j.png" style="margin: 0" title="Auto Judicial" />,
+                                                <img src="/unico/img/d.png" style="margin: 0" title="Documento Administrativo" />,
+                                                <img src="/unico/img/e.png" style="margin: 0" title="Envelope" />,
+                                                <img src="/unico/img/m.png" style="margin: 0" title="Manifestação Avulsa" />,
+                                                <img src="/unico/img/m_vinc.png" style="margin: 0" title="Manifestação Vinculada movimentada sem o Auto Judicial" />
+                                                para visualizar os expedientes.
+                                                <br>
+                                                </font>
+                                            </td>
+                                        </tr>
+                                        </tbody>
+                                    </table>
+                                </div-->
+                            </div>
+
+                            <div>
+                                <script>function exibirNoticia(event, titulo, data, conteudo) {
+                                    if (event) {
+                                        event.preventDefault();
+                                    }
+                                    var mensagem = '<i>' + data + '</i><br/>';
+                                    mensagem += '<b>' + titulo + '</b><br/>';
+                                    mensagem += '<br/><p>' + conteudo + '</p>';
+                                    Ext.MessageBox.show({
+                                        title: 'Notícia',
+                                        msg: mensagem,
+                                        buttons: Ext.Msg.OK,
+                                        fn: function (button) {
+                                            alert('');
+                                            Ext.MessageBox.hide();
+                                        }
+                                    });
+                                }</script>
+                                <div id="ultimas_notícias"
+                                     style="margin-left: 10%; margin-right: 10%; margin-top: 15px;">
+                                    <table width="100%" class="titulosecao_table"
+                                           style="border-bottom: 1px #99bbe8 solid;">
+                                        <tbody>
+                                        <tr style="height: 20;">
+                                            <td>Últimas Notícias</td>
+                                        </tr>
+                                        <tr>
+                                            <td>
+                                                <table id="tb_ultimas_noticias" class="tabela">
+                                                    <thead>
+                                                    <tr>
+                                                        <th width="20%" style="text-align: center;">Data</th>
+                                                        <th width="80%" style="text-align: center;">Título</th>
+                                                    </tr>
+                                                    </thead>
+                                                    <tbody>
+                                                    <tr class="linhaImpar" style="background-color: #C2D6A8">
+                                                        <td width="20%" style="text-align: center;"><a href="#"
+                                                                                                       class="semEstilo"
+                                                                                                       onclick="exibirNoticia(event, 'Editor de texto do sistema Único', '15/01/2019', 'A partir da versão
+3.10 será iniciada a alteração do editor de texto do sistema
+Único, com leiaute mais enxuto, a nova versão atende as críticas
+sobre a perda de formatação na edição de texto e geração de
+arquivo em .pdf.
+
+<h2 class=&quot;western&quot; style=&quot;page-break-after: avoid&quot;>Por que mudou?</h2>
+
+<p class=&quot;western&quot;>O editor de texto do sistema Único é bastante
+criticado pelos usuários devido a constante perda de formatação
+durante o seu uso, principalmente em relação ao que se vê ao
+editar o texto em .html e ao que se obtém ao gerar o documento .pdf.
+</p>
+<p class=&quot;western&quot;>Dessa forma, foi priorizado pela governança do
+sistema a melhoria no editor de texto disponível. 
+</p>
+
+<h2 class=&quot;western&quot;><a name=&quot;Disponibiliza.C3.A7.C3.A3o_para_manifesta.C3.A7.C3.A3o_judicial&quot;></a>
+Disponibilização para manifestação judicial</h2>
+<p class=&quot;western&quot; style=&quot;margin-bottom: 0cm&quot;>Inicialmente, a versão
+2 do Editor estará disponível no módulo Judicial, isto é, para a
+inclusão de Manifestações Judiciais no sistema Único. Após
+estabilização e feedback inicial dos usuários, será
+disponibilizado para a confecção de Documentos. 
+</p>
+
+<h2 class=&quot;western&quot;><a name=&quot;Vers.C3.A3o_enxuta&quot;></a>Versão enxuta</h2>
+<p class=&quot;western&quot;>A versão 2 conta com menos ferramentas para
+formatação. Elas foram reduzidas devido à finalidade de
+estabilizar a geração do pdf confeccionado a partir do editor.
+Dessa forma, o usuário deve aplicar a formatação com os estilos
+existente no próprio editor. Sobre a apresentação da nova versão
+do Editor, <a href=&quot;https://wiki.mpf.mp.br/index.php5/Editor_de_textos_do_sistema_Único_-_versão_2&quot;>confira
+o manual da versão na wikiMPF</a>. <br></p>
+
+<h1 class=&quot;western&quot;><a name=&quot;Necessidade_de_cria.C3.A7.C3.A3o_de_novos_modelos_ou_convers.C3.A3o_dos_modelos_da_vers.C3.A3o_1&quot;></a>
+<font size=&quot;5&quot;><b>Necessidade de conversão dos modelos da versão 1 ou
+criação de novos modelos</b></font></h1>
+<p class=&quot;western&quot;>Inicialmente, ainda será permitido a utilização
+de Modelos da versão anterior, porém em versão futura esse
+comportamento será retirado do sistema. Para os modelos que perderem
+formatação de forma a inviabilizar seu uso, deve-se convertê-los
+para a versão 2. Portanto, será necessária a atuação por parte
+do usuário para que os modelos já existentes (versão 1) sejam
+adaptados para a versão 2 do Editor de texto do sistema. 
+</p>
+<p class=&quot;western&quot;>Para orientação sobre a forma de realizar a
+conversão para a versão 2 do Editor, acesse o manual da versão
+3.10 com vídeo sobre a ação de converter modelos (<a href=&quot;http://www.tvmpf.mpf.mp.br/videos/3312&quot;>link do vídeo</a>).</p><p class=&quot;western&quot; style=&quot;margin-bottom: 0cm&quot;><br>
+</p>
+')">15/01/2019 </a></td>
+                                                        <td width="80%" style="padding: 4px;">
+                                                            <div><a href="#" class="semEstilo" onclick="exibirNoticia(event, 'Editor de texto do sistema Único', '15/01/2019', 'A partir da versão
+3.10 será iniciada a alteração do editor de texto do sistema
+Único, com leiaute mais enxuto, a nova versão atende as críticas
+sobre a perda de formatação na edição de texto e geração de
+arquivo em .pdf.
+
+<h2 class=&quot;western&quot; style=&quot;page-break-after: avoid&quot;>Por que mudou?</h2>
+
+<p class=&quot;western&quot;>O editor de texto do sistema Único é bastante
+criticado pelos usuários devido a constante perda de formatação
+durante o seu uso, principalmente em relação ao que se vê ao
+editar o texto em .html e ao que se obtém ao gerar o documento .pdf.
+</p>
+<p class=&quot;western&quot;>Dessa forma, foi priorizado pela governança do
+sistema a melhoria no editor de texto disponível. 
+</p>
+
+<h2 class=&quot;western&quot;><a name=&quot;Disponibiliza.C3.A7.C3.A3o_para_manifesta.C3.A7.C3.A3o_judicial&quot;></a>
+Disponibilização para manifestação judicial</h2>
+<p class=&quot;western&quot; style=&quot;margin-bottom: 0cm&quot;>Inicialmente, a versão
+2 do Editor estará disponível no módulo Judicial, isto é, para a
+inclusão de Manifestações Judiciais no sistema Único. Após
+estabilização e feedback inicial dos usuários, será
+disponibilizado para a confecção de Documentos. 
+</p>
+
+<h2 class=&quot;western&quot;><a name=&quot;Vers.C3.A3o_enxuta&quot;></a>Versão enxuta</h2>
+<p class=&quot;western&quot;>A versão 2 conta com menos ferramentas para
+formatação. Elas foram reduzidas devido à finalidade de
+estabilizar a geração do pdf confeccionado a partir do editor.
+Dessa forma, o usuário deve aplicar a formatação com os estilos
+existente no próprio editor. Sobre a apresentação da nova versão
+do Editor, <a href=&quot;https://wiki.mpf.mp.br/index.php5/Editor_de_textos_do_sistema_Único_-_versão_2&quot;>confira
+o manual da versão na wikiMPF</a>. <br></p>
+
+<h1 class=&quot;western&quot;><a name=&quot;Necessidade_de_cria.C3.A7.C3.A3o_de_novos_modelos_ou_convers.C3.A3o_dos_modelos_da_vers.C3.A3o_1&quot;></a>
+<font size=&quot;5&quot;><b>Necessidade de conversão dos modelos da versão 1 ou
+criação de novos modelos</b></font></h1>
+<p class=&quot;western&quot;>Inicialmente, ainda será permitido a utilização
+de Modelos da versão anterior, porém em versão futura esse
+comportamento será retirado do sistema. Para os modelos que perderem
+formatação de forma a inviabilizar seu uso, deve-se convertê-los
+para a versão 2. Portanto, será necessária a atuação por parte
+do usuário para que os modelos já existentes (versão 1) sejam
+adaptados para a versão 2 do Editor de texto do sistema. 
+</p>
+<p class=&quot;western&quot;>Para orientação sobre a forma de realizar a
+conversão para a versão 2 do Editor, acesse o manual da versão
+3.10 com vídeo sobre a ação de converter modelos (<a href=&quot;http://www.tvmpf.mpf.mp.br/videos/3312&quot;>link do vídeo</a>).</p><p class=&quot;western&quot; style=&quot;margin-bottom: 0cm&quot;><br>
+</p>
+')">Editor de texto do sistema Único </a></div>
+                                                        </td>
+                                                    </tr>
+                                                    </tbody>
+                                                </table>
+                                            </td>
+                                        </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+                            <br>
+                            <div>
+
+                            </div>
+
+                        </div>
+                    </div>
+
+
+                </td>
+            </tr>
+            </tbody>
+        </table>
+    </form>
+</div>
+
+<!-- Google Analytics - Comentado temporariamente em ( 16/10/2017 ) com o objetivo de mitigar problemas de performance -->
+<!-- script>
+    (function(i, s, o, g, r, a, m) {
+        i['GoogleAnalyticsObject'] = r;
+        i[r] = i[r] || function() {
+            (i[r].q = i[r].q || []).push(arguments)
+        }, i[r].l = 1 * new Date();
+        a = s.createElement(o), m = s.getElementsByTagName(o)[0];
+        a.async = 1;
+        a.src = g;
+        m.parentNode.insertBefore(a, m)
+    })(window, document, 'script',
+            '//www.google-analytics.com/analytics.js', 'ga');
+
+    ga('create', 'UA-48960776-1', 'mp.br');
+    ga('require', 'displayfeatures');
+    ga('send', 'pageview');
+</script -->
+
+<script type="text/javascript" src="/unico/recursos/scripts/acessibilidade/acessibilidade-unico.js"></script>
+
+<script>
+    setTimeout('refreshClock()', 1000);
+</script>
+
+<!--inicioScriptMensagens-->
+<script>window.onload = function () {
+    if (document.getElementById('div_ErrosEMensagens')) {
+        document.getElementById('div_ErrosEMensagens').innerHTML = '<div></div>';
+    }
+};</script>
+
+<!--fimScriptMensagens--><!--inicioControles-->
+<script> DEVE_ALTERAR_CONTEUDO = true;
+DEVE_RENDERIZAR_TODA_PAGINA = false;
+</script>
+<!--fimControles-->
+<div class="x-window-proxy" id="ext-gen14" style="display: none;"></div>
+<div class="ext-el-mask" id="ext-gen15" style="display: none; width: 1280px; height: 610px; z-index: 9000;"></div>
+<div class="x-shadow" id="ext-gen38"
+     style="z-index: 9002; left: 486px; top: 266px; width: 308px; height: 83px; display: none;">
+    <div class="xst">
+        <div class="xstl"></div>
+        <div class="xstc" style="width: 296px;"></div>
+        <div class="xstr"></div>
+    </div>
+    <div class="xsc" style="height: 71px;">
+        <div class="xsml"></div>
+        <div class="xsmc" style="width: 296px;"></div>
+        <div class="xsmr"></div>
+    </div>
+    <div class="xsb">
+        <div class="xsbl"></div>
+        <div class="xsbc" style="width: 296px;"></div>
+        <div class="xsbr"></div>
+    </div>
+</div>
+<div id="ext-comp-1006" class=" x-window x-window-plain x-window-dlg"
+     style="position: absolute; z-index: 9003; visibility: hidden; left: -10000px; top: -10000px; width: 300px; display: block;">
+    <div class="x-window-tl">
+        <div class="x-window-tr">
+            <div class="x-window-tc">
+                <div class="x-window-header x-unselectable x-window-draggable" id="ext-gen4">
+                    <div class="x-tool x-tool-close" id="ext-gen10" style="display: none;">&nbsp;</div>
+                    <span class="x-window-header-text" id="ext-gen16">Processando...</span></div>
+            </div>
+        </div>
+    </div>
+    <div class="x-window-bwrap" id="ext-gen5">
+        <div class="x-window-ml">
+            <div class="x-window-mr">
+                <div class="x-window-mc" id="ext-gen9">
+                    <div class="x-window-body" id="ext-gen6" style="width: 268px; height: auto;">
+                        <div id="ext-gen26">
+                            <div class="ext-mb-icon x-hidden" id="ext-gen27"></div>
+                            <div class="ext-mb-content"><span class="ext-mb-text" id="ext-gen28"
+                                                              style="display: inline;">&nbsp;</span><br>
+                                <div class="ext-mb-fix-cursor"><input type="text" class="ext-mb-input" id="ext-gen29"
+                                                                      style="display: none;"><textarea
+                                        class="ext-mb-textarea" id="ext-gen30" style="display: none;"></textarea></div>
+                            </div>
+                            <div class="x-progress-wrap" id="ext-comp-1007" style="width: 266px;">
+                                <div class="x-progress-inner">
+                                    <div class="x-progress-bar" id="ext-gen32" style="height: 16px; width: 0px;">
+                                        <div class="x-progress-text x-hidden" id="ext-gen33"
+                                             style="z-index: 99; width: 0px;">
+                                            <div id="ext-gen35" style="width: 266px; height: 18px;">&nbsp;</div>
+                                        </div>
+                                    </div>
+                                    <div class="x-progress-text x-progress-text-back" id="ext-gen34">
+                                        <div id="ext-gen36" style="width: 266px; height: 18px;">&nbsp;</div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="x-clear" id="ext-gen37"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="x-window-bl" id="ext-gen8">
+            <div class="x-window-br">
+                <div class="x-window-bc">
+                    <div class="x-window-footer x-panel-btns" id="ext-gen7" style="width: 278px;">
+                        <div id="ext-comp-1005" class="x-panel-fbar x-small-editor x-toolbar-layout-ct"
+                             style="width: auto;">
+                            <table cellspacing="0" class="x-toolbar-ct">
+                                <tbody>
+                                <tr>
+                                    <td class="x-toolbar-left" align="center">
+                                        <table cellspacing="0">
+                                            <tbody>
+                                            <tr class="x-toolbar-left-row">
+                                                <td class="x-toolbar-cell x-hide-offsets" id="ext-gen17">
+                                                    <table id="ext-comp-1001" cellspacing="0"
+                                                           class="x-btn  x-btn-noicon" style="width: 75px;">
+                                                        <tbody class="x-btn-small x-btn-icon-small-left">
+                                                        <tr>
+                                                            <td class="x-btn-tl"><i>&nbsp;</i></td>
+                                                            <td class="x-btn-tc"></td>
+                                                            <td class="x-btn-tr"><i>&nbsp;</i></td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td class="x-btn-ml"><i>&nbsp;</i></td>
+                                                            <td class="x-btn-mc"><em class="" unselectable="on">
+                                                                <button type="button" id="ext-gen18"
+                                                                        class=" x-btn-text">OK
+                                                                </button>
+                                                            </em></td>
+                                                            <td class="x-btn-mr"><i>&nbsp;</i></td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td class="x-btn-bl"><i>&nbsp;</i></td>
+                                                            <td class="x-btn-bc"></td>
+                                                            <td class="x-btn-br"><i>&nbsp;</i></td>
+                                                        </tr>
+                                                        </tbody>
+                                                    </table>
+                                                </td>
+                                                <td class="x-toolbar-cell x-hide-offsets" id="ext-gen19">
+                                                    <table id="ext-comp-1002" cellspacing="0"
+                                                           class="x-btn  x-btn-noicon" style="width: 75px;">
+                                                        <tbody class="x-btn-small x-btn-icon-small-left">
+                                                        <tr>
+                                                            <td class="x-btn-tl"><i>&nbsp;</i></td>
+                                                            <td class="x-btn-tc"></td>
+                                                            <td class="x-btn-tr"><i>&nbsp;</i></td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td class="x-btn-ml"><i>&nbsp;</i></td>
+                                                            <td class="x-btn-mc"><em class="" unselectable="on">
+                                                                <button type="button" id="ext-gen20"
+                                                                        class=" x-btn-text">Sim
+                                                                </button>
+                                                            </em></td>
+                                                            <td class="x-btn-mr"><i>&nbsp;</i></td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td class="x-btn-bl"><i>&nbsp;</i></td>
+                                                            <td class="x-btn-bc"></td>
+                                                            <td class="x-btn-br"><i>&nbsp;</i></td>
+                                                        </tr>
+                                                        </tbody>
+                                                    </table>
+                                                </td>
+                                                <td class="x-toolbar-cell x-hide-offsets" id="ext-gen21">
+                                                    <table id="ext-comp-1003" cellspacing="0"
+                                                           class="x-btn  x-btn-noicon" style="width: 75px;">
+                                                        <tbody class="x-btn-small x-btn-icon-small-left">
+                                                        <tr>
+                                                            <td class="x-btn-tl"><i>&nbsp;</i></td>
+                                                            <td class="x-btn-tc"></td>
+                                                            <td class="x-btn-tr"><i>&nbsp;</i></td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td class="x-btn-ml"><i>&nbsp;</i></td>
+                                                            <td class="x-btn-mc"><em class="" unselectable="on">
+                                                                <button type="button" id="ext-gen22"
+                                                                        class=" x-btn-text">Não
+                                                                </button>
+                                                            </em></td>
+                                                            <td class="x-btn-mr"><i>&nbsp;</i></td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td class="x-btn-bl"><i>&nbsp;</i></td>
+                                                            <td class="x-btn-bc"></td>
+                                                            <td class="x-btn-br"><i>&nbsp;</i></td>
+                                                        </tr>
+                                                        </tbody>
+                                                    </table>
+                                                </td>
+                                                <td class="x-toolbar-cell x-hide-offsets" id="ext-gen23">
+                                                    <table id="ext-comp-1004" cellspacing="0"
+                                                           class="x-btn  x-btn-noicon" style="width: 75px;">
+                                                        <tbody class="x-btn-small x-btn-icon-small-left">
+                                                        <tr>
+                                                            <td class="x-btn-tl"><i>&nbsp;</i></td>
+                                                            <td class="x-btn-tc"></td>
+                                                            <td class="x-btn-tr"><i>&nbsp;</i></td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td class="x-btn-ml"><i>&nbsp;</i></td>
+                                                            <td class="x-btn-mc"><em class="" unselectable="on">
+                                                                <button type="button" id="ext-gen24"
+                                                                        class=" x-btn-text">Cancelar
+                                                                </button>
+                                                            </em></td>
+                                                            <td class="x-btn-mr"><i>&nbsp;</i></td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td class="x-btn-bl"><i>&nbsp;</i></td>
+                                                            <td class="x-btn-bc"></td>
+                                                            <td class="x-btn-br"><i>&nbsp;</i></td>
+                                                        </tr>
+                                                        </tbody>
+                                                    </table>
+                                                </td>
+                                            </tr>
+                                            </tbody>
+                                        </table>
+                                    </td>
+                                    <td class="x-toolbar-right" align="right">
+                                        <table cellspacing="0" class="x-toolbar-right-ct">
+                                            <tbody>
+                                            <tr>
+                                                <td>
+                                                    <table cellspacing="0">
+                                                        <tbody>
+                                                        <tr class="x-toolbar-right-row"></tr>
+                                                        </tbody>
+                                                    </table>
+                                                </td>
+                                                <td>
+                                                    <table cellspacing="0">
+                                                        <tbody>
+                                                        <tr class="x-toolbar-extras-row"></tr>
+                                                        </tbody>
+                                                    </table>
+                                                </td>
+                                            </tr>
+                                            </tbody>
+                                        </table>
+                                    </td>
+                                </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                        <div class="x-clear" id="ext-gen12"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <a href="#" class="x-dlg-focus" tabindex="-1" id="ext-gen13">&nbsp;</a></div>
+</body>
+</html>
